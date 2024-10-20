@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "franco_gutierrez",
+      "email": "",
+      "password": "",
+      "name": "Franco Gutierrez",
+      "avatar": "foto-perfil.png"
+    },
+    {
+      "id": 2,
+      "username": "martin_hernandez",
+      "email": "",
+      "password": "",
+      "name": "Martin Hernandez",
+      "avatar": "foto-perfil.png"
+    },
+    {
+      "id": 3,
+      "username": "mariano_labatut",
+      "email": "",
+      "password": "",
+      "name": "Mariano Labatut",
+      "avatar": "foto-perfil.png"
+    }
+  ],
+  "user_settings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "theme": "dark",
+      "language": "es",
+      "notifications_enabled": true,
+      "private_session": false
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "theme": "light",
+      "language": "es",
+      "notifications_enabled": false,
+      "private_session": true
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "theme": "light",
+      "language": "es",
+      "notifications_enabled": false,
+      "private_session": false
+    }
+  ],
+  "user_playlists": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Mis Favoritas",
+      "description": "Una colección de mis canciones favoritas",
+      "isPublic": true,
+      "createdAt": "2023-03-10T09:00:00Z",
+      "updatedAt": "2023-06-15T16:30:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "name": "Para Trabajar",
+      "description": "Música para concentrarse en el trabajo",
+      "isPublic": false,
+      "createdAt": "2023-04-05T11:20:00Z",
+      "updatedAt": "2023-06-20T10:15:00Z"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "name": "Canciones variadas",
+      "description": "Variedad de músicas para hacer mas llevadero el dia",
+      "isPublic": false,
+      "createdAt": "2023-04-05T11:20:00Z",
+      "updatedAt": "2023-06-20T10:15:00Z"
+    }
+  ]
+}
