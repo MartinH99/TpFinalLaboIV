@@ -15,6 +15,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MainContentComponent } from './components/main-content/main-content.component';
+import { MusicPlaybackComponent } from './components/music-playback/music-playback.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterPageComponent,
     ProfilePageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent,
+    MainContentComponent,
+    MusicPlaybackComponent
   ],
   imports: [
     BrowserModule,
