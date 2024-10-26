@@ -1,0 +1,46 @@
+<div id="main-content" class="container-fluid bg-dark text-white py-4 px-5">
+
+  <!-- Top canciones -->
+  <div class="row mb-4">
+    <div class="col">
+      <h2>Top canciones</h2>
+    </div>
+  </div>
+  <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4 mb-5">
+    <div class="col" *ngFor="let item of worldTop">
+      <div class="card h-100 bg-dark">
+        <div class="image-container">
+          <img [src]="item.imageUrl" class="card-img-top img-fluid" [alt]="item.title">
+        </div>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title text-truncate">{{ item.title }}</h5>
+          <p class="card-text text-truncate text-white-50 mt-auto">{{ item.artist }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /. Top canciones -->
+
+
+  <!-- Artistas populares -->
+  <div class="row mb-4">
+    <div class="col">
+      <h2>Artistas populares</h2>
+    </div>
+  </div>
+  <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4">
+    <div class="col" *ngFor="let item of popularArtists">
+      <div class="card h-100 bg-dark">
+        <div class="image-container">
+          <img [src]="item.imageUrl" class="card-img-top img-fluid" [alt]="item.title">
+        </div>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title text-truncate">{{ item.title }}</h5>
+          <p class="card-text text-truncate text-white-50 mt-auto">{{ item.artist }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /. Artistas populares -->
+
+</div>

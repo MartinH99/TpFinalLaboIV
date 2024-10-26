@@ -9,6 +9,9 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MainContentComponent } from './components/main-content/main-content.component';
+import { MusicPlaybackComponent } from './components/music-playback/music-playback.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { FooterComponent } from './components/footer/footer.component';
     RegisterPageComponent,
     ProfilePageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent,
+    MainContentComponent,
+    MusicPlaybackComponent
   ],
   imports: [
     BrowserModule,
