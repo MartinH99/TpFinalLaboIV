@@ -1,1 +1,24 @@
-<p>login-page works!</p>
+<div class="login-container">
+  <h2>Iniciar sesión en Spotify</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field appearance="fill" class="login-field">
+      <mat-label>Correo electrónico</mat-label>
+      <input matInput type="email" formControlName="email" />
+      <mat-error *ngIf="getFieldError('email')">{{ getFieldError('email') }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="login-field">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="password" />
+      <mat-error *ngIf="getFieldError('password')">{{ getFieldError('password') }}</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="login-button">
+      Iniciar sesión
+    </button>
+  </form>
+  <div class="options">
+    <a href="#">¿Olvidaste tu contraseña?</a>
+    <a href="#">Registrarse en Spotify</a>
+  </div>
+</div>

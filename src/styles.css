@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 body {
   background-color: #121212;
   color: #ffffff; /* Blanco para texto principal */
   font-size: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
 }
+=======
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+>>>>>>> e52d8752473feb3117b70795d1c43613c5e0d076

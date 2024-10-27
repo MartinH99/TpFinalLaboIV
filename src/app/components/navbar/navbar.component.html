@@ -1,1 +1,42 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <!-- Logo Spotify -->
+    <a class="navbar-brand" href="#">
+      <i class="bi bi-spotify icon-spotify"></i>
+    </a>
+
+    <!-- Búsqueda -->
+    <div class="search-container mx-auto">
+      <div class="input-group">
+        <!-- Campo de búsqueda -->
+        <input type="text" class="custom-search-input" placeholder="¿Qué quieres reproducir?" aria-label="Search">
+        <!-- Icono a la derecha del search -->
+        <span class="input-group-text search-icon-right">
+          <i class="bi bi-search"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- Botón de notificaciones y de perfil -->
+    <div class="d-flex align-items-center">
+      <button class="btn btn-link text-light">
+        <i class="bi bi-bell icon-notification"></i>
+      </button>
+
+      <!-- Botón de perfil con menú desplegable -->
+      <div class="position-relative">
+        <button class="btn btn-link text-light" (click)="toggleProfileMenu()">
+          <i class="bi bi-person-circle icon-profile"></i>
+        </button>
+
+        <!-- Menú de perfil -->
+        <div class="profile-menu" *ngIf="isProfileMenuOpen">
+          <a class="profile-menu-item" (click)="profile()">Perfil</a>
+          <hr>
+          <a class="profile-menu-item" (click)="logout()">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
