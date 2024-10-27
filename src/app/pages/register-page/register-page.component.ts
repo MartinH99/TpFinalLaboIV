@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterPageComponent implements OnInit {
   formulario: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formulario = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: [
@@ -25,7 +26,7 @@ export class RegisterPageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onSubmit() {
     if (this.formulario.valid) {
@@ -46,5 +47,9 @@ export class RegisterPageComponent implements OnInit {
     this.showPassword = true;
   }
 
-  
+  login() {
+    this.router.navigate(['/login']);
+  }
+
+
 }
