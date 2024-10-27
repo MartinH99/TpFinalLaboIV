@@ -1,4 +1,3 @@
-
 <div class="container">
   <header>
     <img src="assets/spotify_logo_icon_189261.png" alt="logo">
@@ -7,46 +6,28 @@
     <h1>Regístrate para empezar a escuchar contenido</h1>
   </header>
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
+  <form (ngSubmit)="onSubmit()">
     <div class="mb-3" *ngIf="!showPassword">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        formControlName="email"
-        placeholder="nombre@dominio.com"
-      />
-      <div
-        class="form-error"
-        *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched"
-      >
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="email" placeholder="nombre@dominio.com" />
+      <div class="form-error" *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched">
         El correo electrónico es obligatorio
       </div>
-      <div
-        class="form-error"
-        *ngIf="formulario.get('email')?.errors?.['email'] && formulario.get('email')?.touched"
-      >
+      <div class="form-error" *ngIf="formulario.get('email')?.errors?.['email'] && formulario.get('email')?.touched">
         Ingresa un correo electrónico válido
       </div>
 
       <div id="emailHelp" class="form-text">
         <a
-          href="https://accounts.spotify.com/es/login?method=phone&continue=https%3A%2F%2Faccounts.spotify.com%2Fes-ES%2Fstatus%3Fflow_ctx%3D1c8b5cd0-a275-48aa-b24f-2865394b42a1%253A1729840833&intent=signup&creation_point=https%3A%2F%2Fopen.spotify.com%2F%3Fsp_cid%3D053aa0e0a86e1f0a4b07d347067adf0d%26device%3Ddesktop&flow_ctx=1c8b5cd0-a275-48aa-b24f-2865394b42a1%3A1729840833"
-          >usar el numero de telefono</a
-        >
+          href="https://accounts.spotify.com/es/login?method=phone&continue=https%3A%2F%2Faccounts.spotify.com%2Fes-ES%2Fstatus%3Fflow_ctx%3D1c8b5cd0-a275-48aa-b24f-2865394b42a1%253A1729840833&intent=signup&creation_point=https%3A%2F%2Fopen.spotify.com%2F%3Fsp_cid%3D053aa0e0a86e1f0a4b07d347067adf0d%26device%3Ddesktop&flow_ctx=1c8b5cd0-a275-48aa-b24f-2865394b42a1%3A1729840833">usar
+          el numero de telefono</a>
       </div>
     </div>
     <div class="mb-3" *ngIf="showPassword">
       <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1"
-        formControlName="password"
-        placeholder="password"
-      />
+      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password"
+        placeholder="password" />
     </div>
 
     <button type="submit" class="btn btn-primary" (click)="onClickSiguente()">
@@ -64,11 +45,10 @@
 
   <div>
     <span>¿Ya tienes una cuenta?</span>
-    <a [routerLink]="['/loging']">
-      inicia sesion 
+    <a>
+      inicia sesion
     </a>
   </div>
-  
- 
-</div>
 
+
+</div>
