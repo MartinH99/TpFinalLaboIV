@@ -1,16 +1,21 @@
-.container {
+.container-main {
+  align-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #121212; /* Color de fondo */
+  background-color: #000000;
 }
 
 
 .login-container {
   max-width: 600px;
+  height: fit-content;
   margin: 0 auto;
-  padding: 20rem;
+  padding: 2rem;
   text-align: center;
-  background-color: #121212;
+  background-image: url('/src/assets/Spotify.jfif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 8px;
   color: white;
 }
