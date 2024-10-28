@@ -1,0 +1,106 @@
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-wrap: balance;
+  max-width: 450px;
+}
+
+img {
+  width: 50px; /* Ajusta el tamaño según lo que necesites */
+  height: 50px;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  /*object-fit: cover;*/
+  object-fit: cover; /* Asegura que la imagen se recorte y ajuste bien */
+  display: block;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Le da una ligera sombra para destacarla */
+  filter: contrast(1.2); /* Ajusta el contraste, aumentando si es necesario */
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #121212;
+}
+
+form {
+  width: 100%;
+  max-width: 350px; /* Ancho máximo similar a Spotify */
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #121212;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+button {
+  font-size: 16px;
+  /*font-size: 50px;*/
+  /*padding: 10px 20px;*/
+  padding: 10px 130px;
+  border: none;
+  border-radius: 50px; /* Hace el botón redondeado */
+  background-color: #1db954; /* Color de Spotify */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input.form-control{
+  background-color:#121212;
+  color: #ffffff;
+}
+
+
+input.form-control::placeholder {
+  color: grey;
+  opacity: 1;
+}
+button:hover {
+  background-color: #1ed760;
+  transform: scale(1.02);
+}
+
+.form-label {
+  font-size: 0.8rem;  /* Cambia el tamaño del texto a pequeño */
+  margin-bottom: 5px; /* Da un pequeño margen hacia abajo */
+  display: block;     /* Asegura que el label ocupe todo el ancho */
+}
+
+.form-control {
+  font-size: 1rem;    /* Tamaño normal del texto del input */
+  padding: 10px;      /* Ajusta el padding del input */
+}
+
+a{
+  font-size: 14px;
+color: #1ed760;
+
+}
+
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  border: none;
+  border-top: 1px solid #ffffff; /* Color de la línea */
+  margin: 0 10px;                /* Espacio arriba y abajo */
+  opacity: 0.5;                  /* Transparencia */
+  width: 70%;                    /* Ancho de la línea */
+}
+
+.text {
+  color: #ffffff; /* Color de la "O" */
+  font-size: 9px;
+  font-weight: bold;
+}

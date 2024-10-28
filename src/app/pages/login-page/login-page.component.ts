@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -29,6 +30,17 @@ export class LoginComponent {
   onLogin() {
     if (this.loginForm.valid) {
       console.log('Datos de login:', this.loginForm.value);
+      this.login();
+    } else {
+      alert('Por favor, completa todos los campos requeridos correctamente.');
     }
+  }
+
+  register() {
+    this.router.navigate(['/register']);
+  }
+
+  login() {
+    this.router.navigate(['/home']);
   }
 }
