@@ -43,8 +43,13 @@ export class RegisterPageComponent implements OnInit {
 
   showPassword: boolean = false;
 
-  onClickSiguente() {
-    this.showPassword = true;
+  onClickSiguiente() {
+    const emailControl = this.formulario.get('email');
+    if (emailControl?.valid) {
+      this.showPassword = true; // Muestra el campo de contraseña
+    } else {
+      emailControl?.markAsTouched(); // Muestra errores si el email no es válido
+    }
   }
 
   login() {
@@ -52,4 +57,13 @@ export class RegisterPageComponent implements OnInit {
   }
 
 
+  getFieldError(field: string): string | null {
+    const control = this.formulario.get(field);
+    if (control?.touched && control.errors) {
+      if (control.errors['required']) return 'Este campo es obligatorio';
+      if (control.errors['email']) return 'Correo electrónico inválido';
+      if (control.errors['minlength']) return 'Contraseña muy corta';
+    }
+    return null;
+  }
 }
