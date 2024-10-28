@@ -80,10 +80,6 @@ button:hover {
   padding: 10px;      /* Ajusta el padding del input */
 }
 
-a{
-  font-size: 14px;
-  color: #1ed760;
-}
 
 .line-container {
   display: flex;
@@ -143,4 +139,9 @@ html, body {
 
 .loginHelp{
 color: #ffffff;
+}
+
+.logincss{
+  font-size: 14px;
+  color: #1ed760;
 }
