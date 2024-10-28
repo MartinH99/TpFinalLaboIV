@@ -4,3 +4,9 @@ body {
   color: #ffffff; /* Blanco para texto principal */
   font-size: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
 }
+
+html, body, app-root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
