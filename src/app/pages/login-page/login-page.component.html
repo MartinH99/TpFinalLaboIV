@@ -14,13 +14,19 @@
         <mat-error *ngIf="getFieldError('password')">{{ getFieldError('password') }}</mat-error>
       </mat-form-field>
       
-      <button mat-raised-button color="primary" type="submit" class="login-button">
+      <button class="login-button" type="submit">
         <a (click)="onLogin()">Iniciar sesión</a>
       </button>
+
+      <div class="line-container">
+        <hr class="line" />
+        <span class="text">O</span>
+        <hr class="line" />
+      </div>
     </form>
     <div class="options">
-      <a href="#">¿Olvidaste tu contraseña?</a>
-      <a (click)="register()">Registrarse en Spotify</a>
+      <a style="cursor: pointer;">¿Olvidaste tu contraseña?</a>
+      <a (click)="register()" style="cursor: pointer;">Registrarse en Spotify</a>
     </div>
   </div>
 </div>
