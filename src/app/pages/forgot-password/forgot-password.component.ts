@@ -12,6 +12,8 @@ export class ForgotPasswordComponent {
   forgotPasswordForm: FormGroup;
   successMessage: string = '';
   errorMessage: string = '';
+  attemptCount: number = 0;
+  maxAttempts: number = 3;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.forgotPasswordForm = this.fb.group({
@@ -22,15 +24,32 @@ export class ForgotPasswordComponent {
 
   onSubmit() {
     const { email, securityAnswer } = this.forgotPasswordForm.value;
-
     this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
-      const user = users.find(user => user.email === email && user.securityAnswer === securityAnswer);
-
+      const user = users.find(user => user.email === email);
       if (user) {
-        this.successMessage = `Tu contraseña es: ${user.password}`;
-        this.errorMessage = '';
+        if (user.isBlocked) {
+          this.errorMessage = 'Usuario bloqueado. No puedes intentar recuperar la contraseña nuevamente.';
+          this.successMessage = '';
+          return;
+        }
+        if (user.securityAnswer === securityAnswer) {
+          this.successMessage = `Tu contraseña es: ${user.password}`;
+          this.errorMessage = '';
+          this.attemptCount = 0;
+        } else {
+          this.attemptCount++;
+          if (this.attemptCount >= this.maxAttempts) {
+            user.isBlocked = true;
+            this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(() => {
+              this.errorMessage = 'Usuario bloqueado después de 3 intentos fallidos.';
+            });
+          } else {
+            this.errorMessage = 'Correo o respuesta de seguridad incorrectos';
+          }
+          this.successMessage = '';
+        }
       } else {
-        this.errorMessage = 'Correo o respuesta de seguridad incorrectos';
+        this.errorMessage = 'Usuario no encontrado';
         this.successMessage = '';
       }
     });
