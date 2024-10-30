@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -12,10 +13,10 @@ export class ForgotPasswordComponent {
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.forgotPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      securityAnswer: ['', Validators.required]
+      securityAnswer: ['', [Validators.required, Validators.maxLength(4)]]
     });
   }
 
@@ -26,12 +27,16 @@ export class ForgotPasswordComponent {
       const user = users.find(user => user.email === email && user.securityAnswer === securityAnswer);
 
       if (user) {
-        this.successMessage = 'Tu contraseña es: ${user.password}';
+        this.successMessage = `Tu contraseña es: ${user.password}`;
         this.errorMessage = '';
       } else {
         this.errorMessage = 'Correo o respuesta de seguridad incorrectos';
         this.successMessage = '';
       }
     });
+  }
+
+  login() {
+    this.router.navigate(['/login']);
   }
 }

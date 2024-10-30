@@ -19,6 +19,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { MusicPlaybackComponent } from './components/music-playback/music-playback.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,11 +39,12 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

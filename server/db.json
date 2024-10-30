@@ -3,6 +3,7 @@
     {
       "id": 1,
       "username": "franco_gutierrez",
+      "securityAnswer": "1234",
       "email": "",
       "password": "",
       "name": "Franco Gutierrez",
@@ -11,14 +12,16 @@
     {
       "id": 2,
       "username": "martin_hernandez",
-      "email": "",
-      "password": "",
+      "securityAnswer": "1234",
+      "email": "martinhernandezmdp@gmail.com",
+      "password": "MARTINCHO",
       "name": "Martin Hernandez",
       "avatar": "foto-perfil.png"
     },
     {
       "id": 3,
       "username": "mariano_labatut",
+      "securityAnswer": "1234",
       "email": "marianolabatut@gmail.com",
       "password": "",
       "name": "Mariano Labatut",

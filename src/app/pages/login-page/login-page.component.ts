@@ -44,7 +44,7 @@ export class LoginComponent {
     this.router.navigate(['/home']);
   }
 
-  forgot() {
-    this.router.navigate(['/forgot'])
+  forgotPassword() {
+    this.router.navigate(['/forgot']);
   }
 }
