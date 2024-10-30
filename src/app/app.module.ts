@@ -22,6 +22,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { MusicPlaybackComponent } from './components/music-playback/music-playback.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     SidebarComponent,
     MainContentComponent,
-    MusicPlaybackComponent
+    MusicPlaybackComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

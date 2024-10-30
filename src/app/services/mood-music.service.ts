@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoodMusicService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = environment.apiUrl;
+  private token = environment.token;
 
   constructor(private http: HttpClient) { }
 
   getSongsByMood(mood: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${mood}`).pipe(
-      map((response: any) => {
-        if (Array.isArray(response)) {
-          return response;
-        } else {
-          console.error('Respuesta inesperada:', response);
-          return [];
-        }
-      })
-    );
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`,
+    });
+
+    const body = { mood };
+
+    return this.http.post(this.apiUrl, body, { headers });
   }
 }

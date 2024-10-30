@@ -40,7 +40,7 @@ export class NavbarComponent {
     this.moodMusicService.getSongsByMood(currentMood).subscribe(
       (data) => {
         console.log('Canciones encontradas:', data);
-        this.searchStateService.updateSearchResults(data);
+        this.searchStateService.updateSearchResults(data.songs); 
       },
       (error) => {
         console.error('Error fetching songs:', error);
@@ -48,4 +48,5 @@ export class NavbarComponent {
       }
     );
   }
+  
 }
