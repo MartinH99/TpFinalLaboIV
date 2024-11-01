@@ -13,5 +13,10 @@
     <a [href]="url" target="_blank" class="play-link mt-auto" *ngIf="isPlayable">
       <i class="bi bi-play-circle"></i> Escuchar completo
     </a>
+    <a class="play-link mt-2" style="cursor: pointer;" (click)="togglePlaylist()" *ngIf="addPlayList"
+      [ngClass]="{ 'text-danger': isAddedToPlaylist }">
+      <i [class.bi-plus-circle]="!isAddedToPlaylist" [class.bi-dash-circle]="isAddedToPlaylist"></i>
+      {{ isAddedToPlaylist ? 'Sacar de Playlist' : 'Agregar a Playlist' }}
+    </a>
   </div>
 </div>

@@ -11,4 +11,11 @@ export class CardComponent {
   @Input() artist?: string;
   @Input() url?: string;
   @Input() isPlayable: boolean = false; 
+  @Input() addPlayList: boolean = false;
+
+  isAddedToPlaylist = false; 
+
+  togglePlaylist() {
+    this.isAddedToPlaylist = !this.isAddedToPlaylist; 
+  }
 }

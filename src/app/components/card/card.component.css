@@ -82,4 +82,8 @@
   }
   
   /* /. Estilos para el botón de 'PLAY' de las cards */
+
+  .text-danger {
+    color: red;
+  }
   
