@@ -18,5 +18,8 @@
       <i [class.bi-plus-circle]="!isAddedToPlaylist" [class.bi-dash-circle]="isAddedToPlaylist"></i>
       {{ isAddedToPlaylist ? 'Sacar de Playlist' : 'Agregar a Playlist' }}
     </a>
+    <a [href]="artistUrl" target="_blank" class="play-link mt-auto" style="cursor: pointer;" *ngIf="isArtistCard">
+      <i class="bi bi-play-circle"></i> Ir al perfil
+    </a>
   </div>
 </div>

@@ -10,8 +10,10 @@ export class CardComponent {
   @Input() title!: string;
   @Input() artist?: string;
   @Input() url?: string;
+  @Input() artistUrl?: string; 
   @Input() isPlayable: boolean = false; 
   @Input() addPlayList: boolean = false;
+  @Input() isArtistCard: boolean = false;
 
   isAddedToPlaylist = false; 
 
