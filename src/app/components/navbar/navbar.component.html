@@ -10,9 +10,10 @@
     <div class="search-container mx-auto">
       <div class="input-group">
         <!-- Campo de búsqueda -->
-        <input type="text" class="custom-search-input" placeholder="¿Qué quieres reproducir?" aria-label="Search">
+        <input type="text" class="custom-search-input" placeholder="¿Cuál es tu estado de animo?" aria-label="Search"
+          [(ngModel)]="searchMood">
         <!-- Icono a la derecha del search -->
-        <span class="input-group-text search-icon-right">
+        <span class="input-group-text search-icon-right" (click)="onSearch()">
           <i class="bi bi-search"></i>
         </span>
       </div>
