@@ -12,7 +12,6 @@ img {
   width: 50px; /* Ajusta el tamaño según lo que necesites */
   height: 50px;
   border-radius: 50%; /* Hace que la imagen sea circular */
-  /*object-fit: cover;*/
   object-fit: cover; /* Asegura que la imagen se recorte y ajuste bien */
   display: block;
   margin: 0 auto; /* Centra la imagen horizontalmente */
@@ -20,12 +19,13 @@ img {
   filter: contrast(1.2); /* Ajusta el contraste, aumentando si es necesario */
 }
 
-.container{
+.custom-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  
   padding: 20px;
   background-color: #121212;
 }
@@ -71,7 +71,8 @@ button:hover {
 .form-label {
   font-size: 0.8rem;  /* Cambia el tamaño del texto a pequeño */
   margin-bottom: 5px; /* Da un pequeño margen hacia abajo */
-  display: block;     /* Asegura que el label ocupe todo el ancho */
+  display: block; /* Asegura que el label ocupe todo el ancho */
+  color: #ffffff;    
 }
 
 .form-control {
@@ -79,11 +80,6 @@ button:hover {
   padding: 10px;      /* Ajusta el padding del input */
 }
 
-a{
-  font-size: 14px;
-color: #1ed760;
-
-}
 
 .line-container {
   display: flex;
@@ -103,4 +99,49 @@ color: #1ed760;
   color: #ffffff; /* Color de la "O" */
   font-size: 9px;
   font-weight: bold;
+}
+
+
+.handleError {
+  color: #B71C1C; /* Rojo oscuro y elegante */;
+  opacity: 1;
+}
+
+html, body {
+  
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    max-width: 100%; /* Ancho completo en pantallas pequeñas */
+  }
+
+  form {
+    max-width: 90%; /* Reduce el ancho para dispositivos pequeños */
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px 50px; /* Ajusta el padding del botón en pantallas pequeñas */
+    font-size: 14px;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.loginHelp{
+color: #ffffff;
+}
+
+.logincss{
+  font-size: 14px;
+  color: #1ed760;
 }
