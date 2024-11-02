@@ -35,7 +35,6 @@ import { CardComponent } from './components/card/card.component';
     MainContentComponent,
     MusicPlaybackComponent,
     ForgotPasswordComponent,
-    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +46,6 @@ import { CardComponent } from './components/card/card.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
