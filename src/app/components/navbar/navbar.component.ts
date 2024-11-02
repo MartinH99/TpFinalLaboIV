@@ -26,6 +26,10 @@ export class NavbarComponent {
     this.router.navigate(['/profile']);
   }
 
+  home() {
+    this.router.navigate(['/home']);
+  }
+
   toggleProfileMenu() {
     this.isProfileMenuOpen = !this.isProfileMenuOpen;
   }
