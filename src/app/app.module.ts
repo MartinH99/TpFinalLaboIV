@@ -15,10 +15,11 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { MusicPlaybackComponent } from './components/music-playback/music-playback.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,17 +33,18 @@ import { MusicPlaybackComponent } from './components/music-playback/music-playba
     SidebarComponent,
     MainContentComponent,
     MusicPlaybackComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

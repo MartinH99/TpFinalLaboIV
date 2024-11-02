@@ -3,26 +3,32 @@
     {
       "id": 1,
       "username": "franco_gutierrez",
+      "securityAnswer": "1234",
       "email": "",
       "password": "",
       "name": "Franco Gutierrez",
-      "avatar": "foto-perfil.png"
+      "avatar": "foto-perfil.png",
+      "isBlocked": false
     },
     {
       "id": 2,
       "username": "martin_hernandez",
-      "email": "",
-      "password": "",
+      "securityAnswer": "1234",
+      "email": "martinhernandezmdp@gmail.com",
+      "password": "MARTINCHO",
       "name": "Martin Hernandez",
-      "avatar": "foto-perfil.png"
+      "avatar": "foto-perfil.png",
+      "isBlocked": true
     },
     {
       "id": 3,
       "username": "mariano_labatut",
+      "securityAnswer": "1234",
       "email": "marianolabatut@gmail.com",
       "password": "",
       "name": "Mariano Labatut",
-      "avatar": "foto-perfil.png"
+      "avatar": "foto-perfil.png",
+      "isBlocked": false
     }
   ],
   "user_settings": [

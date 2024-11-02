@@ -21,7 +21,27 @@
 }
 
 .login-container h2 {
-  color: #1DB954;
+  color: #ffffff;
+}
+
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  border: none;
+  border-top: 1px solid #ffffff;
+  margin: 0 10px;
+  opacity: 0.5;
+  width: 70%;
+}
+
+.text {
+  color: #ffffff; /* Color de la "O" */
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .login-field {
@@ -31,10 +51,18 @@
 }
 
 .login-button {
-  width: 100%;
-  background-color: #1DB954;
+  font-size: 16px;
+  /*font-size: 50px;*/
+  /*padding: 10px 20px;*/
+  padding: 10px 130px;
+  border: none;
+  border-radius: 50px; /* Hace el botón redondeado */
+  background-color: #1db954; /* Color de Spotify */
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
+
 .options {
   margin-top: 5%;
   display: grid;
