@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SectionService } from '../../services/section.service';
+import { MusicDataService } from '../../services/music-data.service';
 
 @Component({
   selector: 'app-card',
@@ -15,10 +15,11 @@ export class CardComponent implements OnInit {
   @Input() isPlayable: boolean = false;
   @Input() addPlayList: boolean = false;
   @Input() isArtistCard: boolean = false;
+  @Input() id?: number;
 
   isAddedToPlaylist = false;
 
-  constructor(private sectionService: SectionService) { }
+  constructor(private musicDataService: MusicDataService) { }
 
   ngOnInit() {
     this.checkIfInPlaylist();
@@ -26,16 +27,27 @@ export class CardComponent implements OnInit {
 
   togglePlaylist() {
     if (this.isAddedToPlaylist) {
-      this.sectionService.removeFromPlaylist(this);
+      this.musicDataService.removeFromPlaylist(this.id!).subscribe(() => {
+        this.isAddedToPlaylist = false;
+      });
     } else {
-      this.sectionService.addToPlaylist(this);
-    }
+      const song = {
+        id: this.id,
+        image: this.image,
+        title: this.title,
+        artist: this.artist,
+        url: this.url
+      };
 
-    this.isAddedToPlaylist = !this.isAddedToPlaylist;
+      this.musicDataService.addToPlaylist(song).subscribe(() => {
+        this.isAddedToPlaylist = true;
+      });
+    }
   }
 
   private checkIfInPlaylist() {
-    const playlist = this.sectionService.getPlaylist();
-    this.isAddedToPlaylist = playlist.some(item => item.title === this.title);
+    this.musicDataService.getPlaylist().subscribe(playlist => {
+      this.isAddedToPlaylist = playlist.some(item => item.id === this.id);
+    });
   }
 }

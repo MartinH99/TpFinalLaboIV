@@ -41,9 +41,14 @@ export class MainContentComponent implements OnInit {
 
     this.sectionService.activeSection$.subscribe(section => {
       this.activeSection = section;
+      if (section === 'playlist') {
+        this.loadPlaylist();
+      }
     });
+  }
 
-    this.sectionService.playlist$.subscribe(playlist => {
+  loadPlaylist() {
+    this.musicDataService.getPlaylist().subscribe(playlist => {
       this.playlist = playlist;
     });
   }
