@@ -35,6 +35,7 @@ import { CardComponent } from './components/card/card.component';
     MainContentComponent,
     MusicPlaybackComponent,
     ForgotPasswordComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
