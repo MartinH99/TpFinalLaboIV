@@ -200,67 +200,68 @@
     }
   ],
   "worldTop": [
-    { 
-      "title": "Paint The Town Red", 
-      "artist": "Doja Cat", 
+    {
+      "title": "Paint The Town Red",
+      "artist": "Doja Cat",
       "imageUrl": "https://i.ytimg.com/vi/m4_9TFeMfJE/maxresdefault.jpg",
       "url": "https://open.spotify.com/intl-es/track/7DlZH8EiVDgQXNoj3dnyZC"
     },
-    { 
-      "title": "Cruel Summer", 
-      "artist": "Taylor Swift", 
+    {
+      "title": "Cruel Summer",
+      "artist": "Taylor Swift",
       "imageUrl": "https://i1.sndcdn.com/artworks-hW7SxyFUmTM83zni-aMxGzQ-t500x500.jpg",
       "url": "https://open.spotify.com/intl-es/track/1BxfuPKGuaTgP7aM0Bbdwr"
     },
-    { 
-      "title": "I Remember Everything (feat. Kacey Musgraves)", 
-      "artist": "Zach Bryan", 
+    {
+      "title": "I Remember Everything (feat. Kacey Musgraves)",
+      "artist": "Zach Bryan",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeXe3syMZSBXYUE70sR2WnyyRaSqMMbeL9Aw&s",
       "url": "https://open.spotify.com/intl-es/track/4KULAymBBJcPRpk1yO4dOG"
     },
-    { 
-      "title": "What Was I Made For?", 
-      "artist": "Billie Eilish", 
+    {
+      "title": "What Was I Made For?",
+      "artist": "Billie Eilish",
       "imageUrl": "https://www.billboard.com/wp-content/uploads/2023/12/Billie-Eilish-What-Was-I-Made-For-mv-still-2023-billboard-1548.jpg",
-      "url": "https://open.spotify.com/intl-es/track/6wf7Yu7cxBSPrRlWeSeK0Q" 
+      "url": "https://open.spotify.com/intl-es/track/6wf7Yu7cxBSPrRlWeSeK0Q"
     },
-    { 
-      "title": "Rara vez", 
-      "artist": "Milo J", 
+    {
+      "title": "Rara vez",
+      "artist": "Milo J",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrFgCCb7hbRQoAPm8IyRGG572Urd4-99qESw&s",
       "url": "https://open.spotify.com/intl-es/track/7MVIfkyzuUmQ716j8U7yGR"
     }
   ],
   "popularArtists": [
-    { 
-      "title": "Milo J", 
-      "artist": "Joven Artista y rapero argentino. Combina elementos de trap, rap y música urbana con letras introspectivas y a menudo emocionales. ", 
+    {
+      "title": "Milo J",
+      "artist": "Joven Artista y rapero argentino. Combina elementos de trap, rap y música urbana con letras introspectivas y a menudo emocionales. ",
       "imageUrl": "https://yt3.googleusercontent.com/DsqLhK_MXcm5cN3tX14NDKZ4dJuLG1CeASkovaRMOs4KqWwGTXgWg_caDrnnUJMb4p7wunsB=s900-c-k-c0x00ffffff-no-rj",
       "profileUrl": "https://open.spotify.com/intl-es/artist/19HM5j0ULGSmEoRcrSe5x3"
     },
-    { 
-      "title": "Travis Scott", 
-      "artist": "Rapero, productor y diseñador estadounidense conocido por su estilo innovador que fusiona hip-hop, trap y psicodelia. ", 
+    {
+      "title": "Travis Scott",
+      "artist": "Rapero, productor y diseñador estadounidense conocido por su estilo innovador que fusiona hip-hop, trap y psicodelia. ",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIf4LPJWrvzwnVs_EHovlv1sycguMODvEbsw&s",
       "profileUrl": "https://open.spotify.com/intl-es/artist/0Y5tJX1MQlPlqiwlOH1tJY"
     },
-    { 
-      "title": "Bizarrap", 
-      "artist": "Destacado productor y DJ argentino conocido mundialmente por sus Bzrp Music Sessions.", 
+    {
+      "title": "Bizarrap",
+      "artist": "Destacado productor y DJ argentino conocido mundialmente por sus Bzrp Music Sessions.",
       "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb14add0d3419426b84158b913",
       "profileUrl": "https://open.spotify.com/intl-es/artist/716NhGYqD1jl2wI1Qkgq36"
     },
-    { 
-      "title": "Duki", 
-      "artist": "Artista más influyente del trap y la música urbana en Argentina y América Latina. ", 
+    {
+      "title": "Duki",
+      "artist": "Artista más influyente del trap y la música urbana en Argentina y América Latina. ",
       "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb731bcc0d0f1323fbf91c5719",
       "profileUrl": "https://open.spotify.com/intl-es/artist/1bAftSH8umNcGZ0uyV7LMg"
     },
-    { 
-      "title": "Cancerbero", 
-      "artist": "Influyente rapero y compositor venezolano, considerado una de las figuras más destacadas del rap en español. ", 
+    {
+      "title": "Cancerbero",
+      "artist": "Influyente rapero y compositor venezolano, considerado una de las figuras más destacadas del rap en español. ",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbBoNXe8NAoUAgShy8UELxwWnQR0k1jIUQVw&s",
       "profileUrl": "https://open.spotify.com/intl-es/artist/1wGIhYkKWSq4yACtTkCkSX"
     }
-  ]
+  ],
+  "playList": []
 }

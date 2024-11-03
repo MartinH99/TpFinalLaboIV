@@ -1,24 +1,50 @@
 <div class="card h-100 bg-dark">
   <div class="image-container">
-    <img [src]="image" class="card-img-top img-fluid" [alt]="title">
+    <img [src]="image" class="card-img-top img-fluid" [alt]="title" />
     <button class="play-button" aria-label="Play" *ngIf="isPlayable">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="play-icon"
+      >
         <path d="M8 5v14l11-7z" />
       </svg>
     </button>
   </div>
   <div class="card-body d-flex flex-column">
     <h5 class="card-title text-white text-truncate">{{ title }}</h5>
-    <p class="card-text text-truncate text-white-50 mt-auto" *ngIf="artist">{{ artist }}</p>
-    <a [href]="url" target="_blank" class="play-link mt-auto" *ngIf="isPlayable">
+    <p class="card-text text-truncate text-white-50 mt-auto" *ngIf="artist">
+      {{ artist }}
+    </p>
+    <a
+      [href]="url"
+      target="_blank"
+      class="play-link mt-auto"
+      *ngIf="isPlayable"
+    >
       <i class="bi bi-play-circle"></i> Escuchar completo
     </a>
-    <a class="play-link mt-2" style="cursor: pointer;" (click)="togglePlaylist()" *ngIf="addPlayList"
-      [ngClass]="{ 'text-danger': isAddedToPlaylist }">
-      <i [class.bi-plus-circle]="!isAddedToPlaylist" [class.bi-dash-circle]="isAddedToPlaylist"></i>
-      {{ isAddedToPlaylist ? 'Sacar de Playlist' : 'Agregar a Playlist' }}
+    <a
+      class="play-link mt-2"
+      style="cursor: pointer"
+      (click)="togglePlaylist()"
+      *ngIf="addPlayList"
+      [ngClass]="{ 'text-danger': isAddedToPlaylist }"
+    >
+      <i
+        [class.bi-plus-circle]="!isAddedToPlaylist"
+        [class.bi-dash-circle]="isAddedToPlaylist"
+      ></i>
+      {{ isAddedToPlaylist ? "Sacar de Playlist" : "Agregar a Playlist" }}
     </a>
-    <a [href]="artistUrl" target="_blank" class="play-link mt-auto" style="cursor: pointer;" *ngIf="isArtistCard">
+    <a
+      [href]="artistUrl"
+      target="_blank"
+      class="play-link mt-auto"
+      style="cursor: pointer"
+      *ngIf="isArtistCard"
+    >
       <i class="bi bi-play-circle"></i> Ir al perfil
     </a>
   </div>

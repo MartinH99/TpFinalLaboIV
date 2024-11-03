@@ -18,4 +18,16 @@ export class MusicDataService {
   getPopularArtists(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/popularArtists`);
   }
+
+  getPlaylist(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/playlist`);
+  }
+
+  addToPlaylist(song: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/playlist`, song);
+  }
+
+  removeFromPlaylist(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/playlist/${id}`);
+  }
 }

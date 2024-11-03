@@ -1,0 +1,41 @@
+.footer {
+  background-color: #0a0a0a;
+  color: #919496;
+  padding: 12px 0;
+  font-size: 12px;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.university,
+.copyright {
+  white-space: nowrap;
+}
+
+.university {
+  margin-right: auto;
+}
+
+.copyright {
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .copyright {
+    margin-top: 8px;
+    align-self: flex-end;
+  }
+}

@@ -1,22 +1,38 @@
-<div class="sidebar bg-dark text-white p-3" style="width: 230px; height: 100vh;">
-  <h3 class="mb-2" style="text-align: center;">Acciones </h3>
-  <hr class="mb-4">
+<div class="sidebar bg-dark text-white p-3" style="width: 230px; height: 100vh">
+  <h3 class="mb-2" style="text-align: center">Acciones</h3>
+  <hr class="mb-4" />
   <div class="mb-3">
-    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start mb-2">
+    <button
+      (click)="setActiveSection('todos')"
+      class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start mb-2"
+      [class.active]="activeSection === 'todos'"
+    >
+      <i class="bi bi-caret-right-square-fill"></i>
+      <span class="text-center flex-grow-1">Todos</span>
+    </button>
+    <button
+      (click)="setActiveSection('playlist')"
+      class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start mb-2"
+      [class.active]="activeSection === 'playlist'"
+    >
       <i class="bi bi-plus-square me-2"></i>
       <span class="text-center flex-grow-1">PlayList</span>
     </button>
-    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start mb-2">
+    <button
+      (click)="setActiveSection('artistas')"
+      class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start mb-2"
+      [class.active]="activeSection === 'artistas'"
+    >
       <i class="bi bi-mic-fill me-2"></i>
       <span class="text-center flex-grow-1">Artistas</span>
     </button>
-    <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start mb-2">
+    <button
+      (click)="setActiveSection('canciones')"
+      class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start mb-2"
+      [class.active]="activeSection === 'canciones'"
+    >
       <i class="bi bi-file-music-fill me-2"></i>
       <span class="text-center flex-grow-1">Canciones</span>
     </button>
-    <!-- <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start">
-      <i class="bi bi-heart-fill me-2"></i>
-      <span class="text-center flex-grow-1">Ver Favoritos</span>
-    </button> -->
   </div>
 </div>
