@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Notification } from './../../interfaces/user.model';
+import { MoodMusicService } from '../../services/mood-music.service';
+import { SearchStateService } from '../../services/search-state.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +14,13 @@ export class NavbarComponent {
   public showNotif = false;
   public hasNotifications = true; // Comienza en true para que el círculo se muestre inicialmente
 
-  constructor(private router: Router) {}
+  public searchMood: string = '';
+
+  constructor(
+    private router: Router,
+    private moodMusicService: MoodMusicService,
+    private searchStateService: SearchStateService
+  ) { }
 
   logout() {
     this.router.navigate(['/login']);
@@ -20,6 +28,10 @@ export class NavbarComponent {
 
   profile() {
     this.router.navigate(['/profile']);
+  }
+
+  home() {
+    this.router.navigate(['/home']);
   }
 
   toggleProfileMenu() {
@@ -57,4 +69,23 @@ export class NavbarComponent {
   hideNotification(notificationId: number) {
     this.notifications = this.notifications.filter(notif => notif.id !== notificationId);
   }
+  onSearch() {
+    if (this.searchMood.trim() !== '') {
+      this.loadSongs(this.searchMood);
+    }
+  }
+
+  loadSongs(currentMood: string) {
+    this.moodMusicService.getSongsByMood(currentMood).subscribe(
+      (data) => {
+        console.log('Canciones encontradas:', data);
+        this.searchStateService.updateSearchResults(data); 
+      },
+      (error) => {
+        console.error('Error fetching songs:', error);
+        this.searchStateService.resetSearch();
+      }
+    );
+  }
+  
 }

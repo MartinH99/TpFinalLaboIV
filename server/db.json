@@ -25,13 +25,13 @@
       "username": "mariano_labatut",
       "securityAnswer": "1234",
       "email": "marianolabatut@gmail.com",
-      "password": "",
+      "password": "marianolabatut",
       "name": "Mariano Labatut",
       "isBlocked": false,
       "playlist": []
     } 
   ],
-  "user_settings": [
+  "felicidad": [
     {
       "id": "1",
       "userId": 1,
@@ -57,7 +57,7 @@
       "private_session": false
     }
   ],
-  "user_playlists": [
+  "tristeza": [
     {
       "id": "1",
       "userId": 1,

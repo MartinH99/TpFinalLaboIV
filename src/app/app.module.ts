@@ -20,6 +20,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { MusicPlaybackComponent } from './components/music-playback/music-playback.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainContentComponent,
     MusicPlaybackComponent,
     ForgotPasswordComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
