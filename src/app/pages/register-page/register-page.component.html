@@ -59,6 +59,18 @@
       <div class="handleError" *ngIf="getFieldError('password')">
         {{ getFieldError('password') }}
       </div>
+
+      <label for="securityAnswer" class="form-label">Security Answer</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        formControlName="securityAnswer"
+        placeholder="Ingresa un numero de seguridad"
+      />
+      <div class="handleError" *ngIf="getFieldError('securityAnswer')">
+        {{ getFieldError('securityAnswer') }}
+      </div>
     </div>
 
     

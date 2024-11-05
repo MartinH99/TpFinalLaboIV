@@ -68,7 +68,43 @@
   background-color: #444;
 }
 
+
+.profile-menu-notification {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.profile-menu-notification:hover {
+  background-color: #444;
+}
+
 .profile-menu hr {
   margin: 8px 0;
   border-color: #555;
+}
+
+.toast-header{
+background-color:#2c2b2b;
+color: #fff;
+}
+.toast-body{
+  background-color: #444;
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+
+}
+.notification-indicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  border: 1px solid white;
+  z-index: 1;
 }

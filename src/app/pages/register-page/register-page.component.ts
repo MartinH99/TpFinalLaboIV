@@ -16,6 +16,7 @@ export class RegisterPageComponent implements OnInit {
   formulario: FormGroup;
   seccionActual = 1;
   isSubmitting = false;
+  
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,6 +29,8 @@ export class RegisterPageComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required, Validators.maxLength(15)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
+      securityAnswer:['',[Validators.required,Validators.minLength(3)]]
+
     });
   }
 
@@ -69,21 +72,15 @@ export class RegisterPageComponent implements OnInit {
         next: (users: User[]) => {
 
           
-         // Verificar si ya existe el username o el email y asignar errores específicos
+         // Verificar si ya existe el username
         const existingUsername = users.some(
           (user) => user.username === this.formulario.get('username')?.value
         );
-        const existingEmail = users.some(
-          (user) => user.email === this.formulario.get('email')?.value
-        );
+       
 
-        if (existingUsername || existingEmail) {
+        if (existingUsername) {
           if (existingUsername) {
             this.formulario.get('username')?.setErrors({ usernameTaken: true });
-            this.changeDetectorRef.detectChanges();
-          }
-          if (existingEmail) {
-            this.formulario.get('email')?.setErrors({ emailTaken: true });
             this.changeDetectorRef.detectChanges();
           }
           this.isSubmitting = false;
@@ -98,10 +95,14 @@ export class RegisterPageComponent implements OnInit {
 
           const user: User = {
             id: maxId + 1,
+            securityAnswer: this.formulario.get('securityAnswer')?.value,
             name: this.formulario.get('name')?.value,
             username: this.formulario.get('username')?.value,
             email: this.formulario.get('email')?.value,
             password: this.formulario.get('password')?.value,
+            isBlocked:false,
+            playlist:[]
+
           };
 
           // Agregar el nuevo usuario
@@ -132,6 +133,7 @@ export class RegisterPageComponent implements OnInit {
   login() {
     this.router.navigate(['/login']);
   }
+  
   getFieldError(field: string): string | null {
     const control = this.formulario.get(field);
     if (control?.touched && control.errors) {

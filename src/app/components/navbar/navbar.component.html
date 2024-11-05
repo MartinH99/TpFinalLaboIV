@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
-
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
     <!-- Logo Spotify -->
     <a class="navbar-brand" href="#">
       <i class="bi bi-spotify icon-spotify"></i>
@@ -10,7 +11,12 @@
     <div class="search-container mx-auto">
       <div class="input-group">
         <!-- Campo de búsqueda -->
-        <input type="text" class="custom-search-input" placeholder="¿Qué quieres reproducir?" aria-label="Search">
+        <input
+          type="text"
+          class="custom-search-input"
+          placeholder="¿Qué quieres reproducir?"
+          aria-label="Search"
+        />
         <!-- Icono a la derecha del search -->
         <span class="input-group-text search-icon-right">
           <i class="bi bi-search"></i>
@@ -20,10 +26,39 @@
 
     <!-- Botón de notificaciones y de perfil -->
     <div class="d-flex align-items-center">
-      <button class="btn btn-link text-light">
-        <i class="bi bi-bell icon-notification"></i>
-      </button>
+      
+      
+        <div class="position-relative">
 
+          <button class="btn btn-link text-light" (click)="showNotification()">
+            <i class="bi bi-bell icon-notification"></i>
+            <!-- Círculo amarillo para indicar notificaciones -->
+            <span *ngIf="hasNotifications" class="notification-indicator"></span>
+          </button>
+
+          <div class="profile-menu" *ngIf="showNotif && notifications.length > 0">
+            <div *ngFor="let notification of notifications" class="profile-menu-item position-relative p-3 border-bottom">
+              <!-- Botón de cierre para cada notificación -->
+              <button 
+                type="button" 
+                class="btn-close position-absolute top-0 end-0 m-2" 
+                (click)="hideNotification(notification.id)" 
+                aria-label="Close">
+              </button>
+          
+              <!-- Contenido de la notificación -->
+              <strong>{{ notification.title }}</strong><br />
+              <span>{{ notification.message }}</span>
+            </div>
+          </div>
+             
+        
+        </div>
+      </div>
+
+     
+      
+    
       <!-- Botón de perfil con menú desplegable -->
       <div class="position-relative">
         <button class="btn btn-link text-light" (click)="toggleProfileMenu()">
@@ -32,11 +67,23 @@
 
         <!-- Menú de perfil -->
         <div class="profile-menu" *ngIf="isProfileMenuOpen">
-          <a class="profile-menu-item" style="cursor: pointer;" (click)="profile()">Perfil</a>
-          <hr>
-          <a class="profile-menu-item" style="cursor: pointer;" (click)="logout()">Cerrar sesión</a>
+          <a
+            class="profile-menu-item"
+            style="cursor: pointer"
+            (click)="profile()"
+            >Perfil</a
+          >
+          <hr />
+          <a
+            class="profile-menu-item"
+            style="cursor: pointer"
+            (click)="logout()"
+            >Cerrar sesión</a
+          >
         </div>
       </div>
     </div>
-  </div>
+
+
+  
 </nav>
