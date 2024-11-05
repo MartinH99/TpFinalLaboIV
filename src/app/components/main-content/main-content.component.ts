@@ -6,7 +6,7 @@ import { SectionService } from '../../services/section.service';
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
-  styleUrl: './main-content.component.css'
+  styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
   searchResults: any[] = [];
@@ -15,6 +15,7 @@ export class MainContentComponent implements OnInit {
   playlist: any[] = [];
   searchPerformed = false;
   activeSection: string = 'todos';
+  userId: string | null = null;
 
   constructor(
     private searchStateService: SearchStateService,
@@ -23,6 +24,18 @@ export class MainContentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.userId = localStorage.getItem('userId');
+
+    // Carga inicial de datos
+    this.loadInitialData();
+
+    // Suscripción a cambios de sección
+    this.sectionService.activeSection$.subscribe(section => {
+      this.activeSection = section;
+      this.loadSectionData(section);
+    });
+
+    // Otras suscripciones
     this.searchStateService.searchResults$.subscribe(results => {
       this.searchResults = results;
     });
@@ -30,7 +43,9 @@ export class MainContentComponent implements OnInit {
     this.searchStateService.searchPerformed$.subscribe(performed => {
       this.searchPerformed = performed;
     });
+  }
 
+  loadInitialData() {
     this.musicDataService.getWorldTop().subscribe(data => {
       this.worldTop = data;
     });
@@ -39,17 +54,43 @@ export class MainContentComponent implements OnInit {
       this.popularArtists = data;
     });
 
-    this.sectionService.activeSection$.subscribe(section => {
-      this.activeSection = section;
-      if (section === 'playlist') {
+    if (this.userId) {
+      this.loadPlaylist();
+    }
+  }
+
+  loadSectionData(section: string) {
+    switch (section) {
+      case 'playlist':
         this.loadPlaylist();
-      }
+        break;
+      case 'todos':
+      case 'canciones':
+        this.loadWorldTop();
+        break;
+      case 'artistas':
+        this.loadPopularArtists();
+        break;
+    }
+  }
+
+  loadWorldTop() {
+    this.musicDataService.getWorldTop().subscribe(data => {
+      this.worldTop = data;
+    });
+  }
+
+  loadPopularArtists() {
+    this.musicDataService.getPopularArtists().subscribe(data => {
+      this.popularArtists = data;
     });
   }
 
   loadPlaylist() {
-    this.musicDataService.getPlaylist().subscribe(playlist => {
-      this.playlist = playlist;
-    });
+    if (this.userId) {
+      this.musicDataService.getPlaylist(this.userId).subscribe(playlist => {
+        this.playlist = playlist;
+      });
+    }
   }
 }

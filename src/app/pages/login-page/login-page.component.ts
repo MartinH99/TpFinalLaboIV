@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -29,8 +30,18 @@ export class LoginComponent {
 
   onLogin() {
     if (this.loginForm.valid) {
-      console.log('Datos de login:', this.loginForm.value);
-      this.login();
+      const { email, password } = this.loginForm.value;
+
+      this.authService.login(email, password).subscribe(
+        user => {
+          console.log("🚀 ~ LoginComponent ~ onLogin ~ user:", user)
+          if(user){
+            console.log(user.id)
+            localStorage.setItem('userId', user.id)
+            this.login();
+          }
+        }
+      )
     } else {
       alert('Por favor, completa todos los campos requeridos correctamente.');
     }
