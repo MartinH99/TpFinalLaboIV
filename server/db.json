@@ -2,11 +2,12 @@
   "users": [
     {
       "id": "1",
-      "username": "francoguti",
+      "username": "franco_gutierrez",
       "securityAnswer": "1234",
-      "email": "francogutierrez01@hotmail.com",
-      "password": "pocho12345",
+      "email": "",
+      "password": "",
       "name": "Franco Gutierrez",
+      "avatar": "foto-perfil.png",
       "isBlocked": false,
       "playlist": []
     },
@@ -17,6 +18,7 @@
       "email": "martinhernandezmdp@gmail.com",
       "password": "MARTINCHO",
       "name": "Martin Hernandez",
+      "avatar": "foto-perfil.png",
       "isBlocked": true,
       "playlist": []
     },

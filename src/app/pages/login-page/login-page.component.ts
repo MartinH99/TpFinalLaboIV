@@ -34,11 +34,11 @@ export class LoginComponent {
 
       this.authService.login(email, password).subscribe(
         user => {
-          console.log("🚀 ~ LoginComponent ~ onLogin ~ user:", user)
           if(user){
-            console.log(user.id)
             localStorage.setItem('userId', user.id)
             this.login();
+          } else {
+            alert('¡Usuario y/o contraseña incorrectos!')
           }
         }
       )
