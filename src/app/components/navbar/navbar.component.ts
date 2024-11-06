@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchStateService } from '../../services/search-state.service';
 import { MusicDataService } from '../../services/music-data.service';
+import { Notification } from './../../interfaces/user.model';
 
 @Component({
   selector: 'app-navbar',
