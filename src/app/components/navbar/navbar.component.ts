@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Notification } from './../../interfaces/user.model';
-import { MoodMusicService } from '../../services/mood-music.service';
 import { SearchStateService } from '../../services/search-state.service';
+import { MusicDataService } from '../../services/music-data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +17,7 @@ export class NavbarComponent {
 
   constructor(
     private router: Router,
-    private moodMusicService: MoodMusicService,
+    private moodMusicService: MusicDataService,
     private searchStateService: SearchStateService
   ) { }
 
@@ -79,7 +78,7 @@ export class NavbarComponent {
     this.moodMusicService.getSongsByMood(currentMood).subscribe(
       (data) => {
         console.log('Canciones encontradas:', data);
-        this.searchStateService.updateSearchResults(data); 
+        this.searchStateService.updateSearchResults(data);
       },
       (error) => {
         console.error('Error fetching songs:', error);
@@ -87,5 +86,5 @@ export class NavbarComponent {
       }
     );
   }
-  
+
 }

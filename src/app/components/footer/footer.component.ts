@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  university: string = 'UTN - Universidad Tecnológica Nacional';
+  copyright: string = '© 2024 Spotify Mood AB';
 }
