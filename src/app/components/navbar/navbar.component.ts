@@ -43,19 +43,17 @@ export class NavbarComponent {
     this.isProfileMenuOpen = !this.isProfileMenuOpen;
   }
 
+
   showNotification() {
-    // Si el menú de perfil está abierto, lo cierra
-    if (this.isProfileMenuOpen) {
-      this.isProfileMenuOpen = false;
+    if (this.showNotif) {
+      this.hasNotifications = false;
     }
-    // Abre el menú de notificaciones y desactiva el indicador de notificación
-    this.showNotif = true;
-    this.hasNotifications = false;
-  
-    // Ocultar automáticamente el toast después de unos segundos
-    setTimeout(() => {
-      this.showNotif = false;
-    }, 6000); // Duración en milisegundos
+    if(this.isProfileMenuOpen){
+      this.isProfileMenuOpen=false;
+    }
+     this.showNotif = !this.showNotif;
+    
+     
   }
 
 
@@ -65,10 +63,11 @@ export class NavbarComponent {
     { id: 3, title: 'Playlist Update', message: 'Your "Favorites" playlist has been updated with the latest tracks.' }
   ];
 
-  // Función para ocultar una notificación específica
+
   hideNotification(notificationId: number) {
     this.notifications = this.notifications.filter(notif => notif.id !== notificationId);
   }
+
   onSearch() {
     if (this.searchMood.trim() !== '') {
       this.loadSongs(this.searchMood);

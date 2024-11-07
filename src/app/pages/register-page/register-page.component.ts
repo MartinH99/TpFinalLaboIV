@@ -46,10 +46,10 @@ export class RegisterPageComponent implements OnInit {
           );
   
           if (existingEmail) {
-            // Marcar el campo de email como inválido si ya existe
+           
             this.formulario.get('email')?.setErrors({ emailTaken: true });
           } else {
-            // Avanzar a la siguiente sección si no hay errores
+            
             this.seccionActual = 2;
           }
         },
@@ -148,6 +148,8 @@ export class RegisterPageComponent implements OnInit {
     }
     return null;
   }
+  
+
   
 }
 

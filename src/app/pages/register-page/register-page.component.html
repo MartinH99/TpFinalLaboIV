@@ -10,7 +10,8 @@
     <!-- Sección 1 -->
     <div class="mb-3" *ngIf="seccionActual === 1">
       <label for="name" class="form-label">Nombre</label>
-      <input
+      <input 
+        [ngClass]="{'is-invalid' : getFieldError('name')}"
         type="text"
         class="form-control"
         id="name"
@@ -23,6 +24,7 @@
 
       <label for="email" class="form-label">Correo electrónico</label>
       <input
+        [ngClass]="{'is-invalid' : getFieldError('email')}"
         type="email"
         class="form-control"
         id="email"
@@ -38,6 +40,7 @@
     <div class="mb-3" *ngIf="seccionActual === 2">
       <label for="username" class="form-label">Nombre de usuario</label>
       <input
+      [ngClass]="{'is-invalid' : getFieldError('username')}"
         type="text"
         class="form-control"
         id="username"
@@ -50,6 +53,7 @@
 
       <label for="password" class="form-label">Contraseña</label>
       <input
+      [ngClass]="{'is-invalid' : getFieldError('password')}"
         type="password"
         class="form-control"
         id="password"
@@ -62,6 +66,7 @@
 
       <label for="securityAnswer" class="form-label">Security Answer</label>
       <input
+      [ngClass]="{'is-invalid' : getFieldError('securityAnswer')}"
         type="text"
         class="form-control"
         id="username"
