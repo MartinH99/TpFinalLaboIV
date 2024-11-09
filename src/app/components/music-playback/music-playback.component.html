@@ -1,11 +1,16 @@
-<div class="fixed-bottom bg-dark text-white py-2">
+<div class="fixed-bottom bg-dark text-white py-2" *ngIf="currentSong">
   <div class="container-fluid">
     <div class="row align-items-center">
       <div class="col-3 d-flex align-items-center">
-        <img [src]="currentSong.imageUrl" [alt]="currentSong.title" class="me-3" style="width: 56px; height: 56px;">
+        <img
+          [src]="currentSong.imageUrl"
+          [alt]="currentSong.title"
+          class="me-3"
+          style="width: 56px; height: 56px"
+        />
         <div>
           <h6 class="mb-0">{{ currentSong.title }}</h6>
-          <small class="text-muted">{{ currentSong.artist }}</small>
+          <small>{{ currentSong.artist }}</small>
         </div>
       </div>
       <div class="col-6">
@@ -16,8 +21,19 @@
           <button class="btn btn-link text-white me-3">
             <i class="bi bi-skip-start-fill"></i>
           </button>
-          <button class="btn btn-link text-white me-3">
-            <i class="bi bi-play-circle-fill fs-2"></i>
+          <button
+            class="btn btn-link text-white me-3"
+            (click)="togglePlay()"
+            [disabled]="!currentSong.preview_url"
+          >
+            <i
+              class="bi"
+              [ngClass]="
+                isPlaying
+                  ? 'bi-pause-circle-fill fs-2'
+                  : 'bi-play-circle-fill fs-2'
+              "
+            ></i>
           </button>
           <button class="btn btn-link text-white me-3">
             <i class="bi bi-skip-end-fill"></i>
@@ -26,18 +42,30 @@
             <i class="bi bi-repeat"></i>
           </button>
         </div>
-        <div class="progress mt-2" style="height: 4px;">
-          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100"></div>
+        <div class="progress mt-2" style="height: 4px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
         </div>
       </div>
       <div class="col-3 d-flex justify-content-end align-items-center">
         <button class="btn btn-link text-white me-3">
           <i class="bi bi-volume-up"></i>
         </button>
-        <div class="progress" style="width: 100px; height: 4px;">
-          <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-            aria-valuemax="100"></div>
+        <div class="progress" style="width: 100px; height: 4px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 50%"
+            aria-valuenow="50"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ export class RegisterPageComponent implements OnInit {
   formulario: FormGroup;
   seccionActual = 1;
   isSubmitting = false;
-  
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,12 +29,12 @@ export class RegisterPageComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required, Validators.maxLength(15)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
-      securityAnswer:['',[Validators.required,Validators.minLength(3)]]
+      securityAnswer: ['', [Validators.required, Validators.minLength(3)]]
 
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onClickSiguiente() {
     if (this.formulario.get('name')?.valid && this.formulario.get('email')?.valid) {
@@ -44,7 +44,7 @@ export class RegisterPageComponent implements OnInit {
           const existingEmail = users.some(
             (user) => user.email === this.formulario.get('email')?.value
           );
-  
+
           if (existingEmail) {
             // Marcar el campo de email como inválido si ya existe
             this.formulario.get('email')?.setErrors({ emailTaken: true });
@@ -71,23 +71,23 @@ export class RegisterPageComponent implements OnInit {
       this.registerService.getUsers().subscribe({
         next: (users: User[]) => {
 
-          
-         // Verificar si ya existe el username
-        const existingUsername = users.some(
-          (user) => user.username === this.formulario.get('username')?.value
-        );
-       
 
-        if (existingUsername) {
+          // Verificar si ya existe el username
+          const existingUsername = users.some(
+            (user) => user.username === this.formulario.get('username')?.value
+          );
+
+
           if (existingUsername) {
-            this.formulario.get('username')?.setErrors({ usernameTaken: true });
-            this.changeDetectorRef.detectChanges();
+            if (existingUsername) {
+              this.formulario.get('username')?.setErrors({ usernameTaken: true });
+              this.changeDetectorRef.detectChanges();
+            }
+            this.isSubmitting = false;
+            return;
           }
-          this.isSubmitting = false;
-          return;
-        }
 
-          
+
           const maxId = users.reduce((max, user) => {
             const userId = Number(user.id);
             return userId > max ? userId : max;
@@ -100,15 +100,15 @@ export class RegisterPageComponent implements OnInit {
             username: this.formulario.get('username')?.value,
             email: this.formulario.get('email')?.value,
             password: this.formulario.get('password')?.value,
-            isBlocked:false,
-            playlist:[]
+            isBlocked: false,
+            playlist: []
 
           };
 
           // Agregar el nuevo usuario
           this.registerService.addUser(user).pipe(take(1)).subscribe({
             next: (response) => {
-              console.log('User registered:', response);
+              //console.log('User registered:', response);
               this.router.navigate(['/login']);
               this.isSubmitting = false;
             },
@@ -133,7 +133,7 @@ export class RegisterPageComponent implements OnInit {
   login() {
     this.router.navigate(['/login']);
   }
-  
+
   getFieldError(field: string): string | null {
     const control = this.formulario.get(field);
     if (control?.touched && control.errors) {
@@ -148,6 +148,6 @@ export class RegisterPageComponent implements OnInit {
     }
     return null;
   }
-  
+
 }
 

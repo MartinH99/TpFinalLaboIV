@@ -81,7 +81,8 @@ export class NavbarComponent {
     this.moodMusicService.getSongsByMood(currentMood).subscribe(
       (data) => {
         // console.log('Canciones encontradas:', data);
-        this.searchStateService.updateSearchResults(data);
+        const filteredSongs = data.slice(0, 5);
+        this.searchStateService.updateSearchResults(filteredSongs);
         this.isLoading = false;
       },
       (error) => {

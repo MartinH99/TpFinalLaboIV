@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { MusicDataService } from '../../services/music-data.service';
 import { Subscription } from 'rxjs';
+import { SectionService } from '../../services/section.service';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +13,7 @@ export class CardComponent implements OnInit, OnDestroy {
   @Input() title!: string;
   @Input() artist?: string;
   @Input() url?: string;
+  @Input() preview_url?: string;
   @Input() artistUrl?: string;
   @Input() isPlayable: boolean = false;
   @Input() addPlayList: boolean = false;
@@ -22,7 +24,10 @@ export class CardComponent implements OnInit, OnDestroy {
   userId: string | null = null;
   private playlistSubscription: Subscription | null = null;
 
-  constructor(private musicDataService: MusicDataService) { }
+  constructor(
+    private musicDataService: MusicDataService,
+    private currentSongService: SectionService
+  ) { }
 
   ngOnInit() {
     this.userId = localStorage.getItem('userId');
@@ -65,5 +70,18 @@ export class CardComponent implements OnInit, OnDestroy {
         this.isAddedToPlaylist = true;
       });
     }
+  }
+
+  playSong() {
+    const song = {
+      id: this.id,
+      title: this.title,
+      artist: this.artist,
+      imageUrl: this.image,
+      url: this.url,
+      preview_url: this.preview_url,
+    };
+
+    this.currentSongService.setCurrentSong(song);
   }
 }
