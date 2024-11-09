@@ -1,46 +1,46 @@
 .icon-profile {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .icon-notification {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .icon-spotify {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .custom-navbar {
-    background-color: #0f0c0c;
-    padding: 0.2rem;
+  background-color: #0f0c0c;
+  padding: 0.2rem;
 }
 
 .search-container {
-    width: 30%;
+  width: 30%;
 }
 
 .custom-search-input {
-    background-color: #2c2b2b;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding-left: 2rem;
-    height: 3rem;
-    width: 70%;
-    outline: none;
+  background-color: #2c2b2b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding-left: 2rem;
+  height: 3rem;
+  width: 70%;
+  outline: none;
 }
 
 .search-icon-right {
-    background-color: #1c1c1c;
-    color: white;
-    cursor: pointer;
-    padding-right: 1rem;
-    border: none;
-    border-radius: 10px;
+  background-color: #1c1c1c;
+  color: white;
+  cursor: pointer;
+  padding-right: 1rem;
+  border: none;
+  border-radius: 10px;
 }
 
 .custom-search-input:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .profile-menu {
@@ -67,7 +67,6 @@
   background-color: #444;
 }
 
-
 .profile-menu-notification {
   display: block;
   padding: 8px 16px;
@@ -84,17 +83,16 @@
   border-color: #555;
 }
 
-.toast-header{
-background-color:#2c2b2b;
-color: #fff;
+.toast-header {
+  background-color: #2c2b2b;
+  color: #fff;
 }
-.toast-body{
+.toast-body {
   background-color: #444;
   display: block;
   padding: 8px 16px;
   color: #fff;
   text-decoration: none;
-
 }
 .notification-indicator {
   position: absolute;
@@ -106,4 +104,21 @@ color: #fff;
   border-radius: 50%;
   border: 1px solid white;
   z-index: 1;
+}
+
+.loader svg {
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  color: #1db954;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
