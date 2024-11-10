@@ -49,14 +49,12 @@ export class NavbarComponent {
     if (this.showNotif) {
       this.hasNotifications = false;
     }
-    // Abre el menú de notificaciones y desactiva el indicador de notificación
-    this.showNotif = true;
-    this.hasNotifications = false;
-
-    // Ocultar automáticamente el toast después de unos segundos
-    setTimeout(() => {
-      this.showNotif = false;
-    }, 6000); // Duración en milisegundos
+    if(this.isProfileMenuOpen){
+      this.isProfileMenuOpen=false;
+    }
+     this.showNotif = !this.showNotif;
+    
+     
   }
 
 
