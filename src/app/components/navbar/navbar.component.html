@@ -85,7 +85,7 @@
         <button class="btn btn-link text-light" (click)="showNotification()">
           <i class="bi bi-bell icon-notification"></i>
           <!-- Círculo amarillo para indicar notificaciones -->
-          <span *ngIf="hasNotifications" class="notification-indicator"></span>
+          <span *ngIf="hasNotifications && notifications.length > 0"  class="notification-indicator"></span>
         </button>
 
         <div class="profile-menu" *ngIf="showNotif && notifications.length > 0">
