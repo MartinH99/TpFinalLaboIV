@@ -11,22 +11,22 @@
       "playlist": []
     },
     {
-      "id": "2",
-      "username": "martin_hernandez",
-      "securityAnswer": "1234",
-      "email": "martinhernandezmdp@gmail.com",
-      "password": "MARTINCHO",
-      "name": "Martin Hernandez",
-      "isBlocked": true,
-      "playlist": []
-    },
-    {
       "id": "3",
       "username": "mariano_labatut",
       "securityAnswer": "1234",
       "email": "marianolabatut@gmail.com",
       "password": "marianolabatut",
       "name": "Mariano Labatut",
+      "isBlocked": false,
+      "playlist": []
+    },
+    {
+      "id": 4,
+      "securityAnswer": "TINO",
+      "name": "Martin",
+      "username": "tincho99",
+      "email": "martinhernandezmdp@gmail.com",
+      "password": "MARTINCHO",
       "isBlocked": false,
       "playlist": []
     }
