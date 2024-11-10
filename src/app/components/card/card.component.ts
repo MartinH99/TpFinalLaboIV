@@ -13,7 +13,7 @@ export class CardComponent implements OnInit, OnDestroy {
   @Input() title!: string;
   @Input() artist?: string;
   @Input() url?: string;
-  @Input() preview_url?: string;
+  @Input() preview_url?: string | null;
   @Input() artistUrl?: string;
   @Input() isPlayable: boolean = false;
   @Input() addPlayList: boolean = false;
@@ -63,7 +63,8 @@ export class CardComponent implements OnInit, OnDestroy {
         image: this.image,
         title: this.title,
         artist: this.artist,
-        url: this.url
+        url: this.url,
+        preview_url: this.preview_url,
       };
 
       this.musicDataService.addToPlaylist(this.userId, song).subscribe(() => {
@@ -73,15 +74,17 @@ export class CardComponent implements OnInit, OnDestroy {
   }
 
   playSong() {
-    const song = {
-      id: this.id,
-      title: this.title,
-      artist: this.artist,
-      imageUrl: this.image,
-      url: this.url,
-      preview_url: this.preview_url,
-    };
+    if (this.preview_url) {
+      const song = {
+        id: this.id,
+        title: this.title,
+        artist: this.artist,
+        imageUrl: this.image,
+        url: this.url,
+        preview_url: this.preview_url,
+      };
 
-    this.currentSongService.setCurrentSong(song);
+      this.currentSongService.setCurrentSong(song);
+    }
   }
 }

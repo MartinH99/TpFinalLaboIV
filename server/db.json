@@ -228,13 +228,15 @@
       "artist": "Doja Cat",
       "imageUrl": "https://i.ytimg.com/vi/m4_9TFeMfJE/maxresdefault.jpg",
       "url": "https://open.spotify.com/intl-es/track/7DlZH8EiVDgQXNoj3dnyZC",
+      "preview_url": "https://p.scdn.co/mp3-preview/1d4dc1cd67ba78afec8cfb3e5258a9ab9b707dd8?cid=cfe923b2d660439caf2b557b21f31221",
       "id": "476f"
     },
     {
-      "title": "Cruel Summer",
-      "artist": "Taylor Swift",
-      "imageUrl": "https://i1.sndcdn.com/artworks-hW7SxyFUmTM83zni-aMxGzQ-t500x500.jpg",
-      "url": "https://open.spotify.com/intl-es/track/1BxfuPKGuaTgP7aM0Bbdwr",
+      "title": "Real Gangsta Love",
+      "artist": "Trueno",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRisFKOBqcef6l4t7eoLRx1Fy7DrGnsRZZucw&s",
+      "url": "https://open.spotify.com/intl-es/track/1pymWRCuZfCd0zdiBJo0Hj",
+      "preview_url": "https://p.scdn.co/mp3-preview/2f10aa6bf08d7c4b1a7737c3accb9b738f885c73?cid=cfe923b2d660439caf2b557b21f31221",
       "id": "dcfa"
     },
     {
@@ -242,20 +244,23 @@
       "artist": "Zach Bryan",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeXe3syMZSBXYUE70sR2WnyyRaSqMMbeL9Aw&s",
       "url": "https://open.spotify.com/intl-es/track/4KULAymBBJcPRpk1yO4dOG",
+      "preview_url": "https://p.scdn.co/mp3-preview/22b240f7ef2eff38bd12fb0c94dfea5e1d70e20a?cid=cfe923b2d660439caf2b557b21f31221",
       "id": "97dd"
     },
     {
-      "title": "What Was I Made For?",
-      "artist": "Billie Eilish",
-      "imageUrl": "https://www.billboard.com/wp-content/uploads/2023/12/Billie-Eilish-What-Was-I-Made-For-mv-still-2023-billboard-1548.jpg",
-      "url": "https://open.spotify.com/intl-es/track/6wf7Yu7cxBSPrRlWeSeK0Q",
+      "title": "FE!N (feat. Playboi Carti)",
+      "artist": "Travis Scott, PlayBoi Carti",
+      "imageUrl": "https://m.media-amazon.com/images/I/31XnTeYznHL._UXNaN_FMjpg_QL85_.jpg",
+      "url": "https://open.spotify.com/intl-es/track/42VsgItocQwOQC3XWZ8JNA",
+      "preview_url": "https://p.scdn.co/mp3-preview/4b0178cf6991f59db18e12e2219ff11e27474b0a?cid=cfe923b2d660439caf2b557b21f31221",
       "id": "a86a"
     },
     {
-      "title": "Rara vez",
-      "artist": "Milo J",
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrFgCCb7hbRQoAPm8IyRGG572Urd4-99qESw&s",
-      "url": "https://open.spotify.com/intl-es/track/7MVIfkyzuUmQ716j8U7yGR",
+      "title": "Quevedo: Bzrp Music Sessions, Vol.52",
+      "artist": "Bizarrap, Quevedo",
+      "imageUrl": "https://i.scdn.co/image/ab67616d0000b2731630dd349221a35ce03a0ccf",
+      "url": "https://open.spotify.com/intl-es/track/2tTmW7RDtMQtBk7m2rYeSw",
+      "preview_url": "https://p.scdn.co/mp3-preview/e9c0ed735e611f6af45bc946bd4c31590df09ed6?cid=cfe923b2d660439caf2b557b21f31221",
       "id": "5867"
     }
   ],

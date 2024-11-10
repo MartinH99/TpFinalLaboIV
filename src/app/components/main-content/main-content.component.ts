@@ -26,16 +26,13 @@ export class MainContentComponent implements OnInit {
   ngOnInit() {
     this.userId = localStorage.getItem('userId');
 
-    // Carga inicial de datos
     this.loadInitialData();
 
-    // Suscripción a cambios de sección
     this.sectionService.activeSection$.subscribe(section => {
       this.activeSection = section;
       this.loadSectionData(section);
     });
 
-    // Otras suscripciones
     this.searchStateService.searchResults$.subscribe(results => {
       this.searchResults = results;
     });
