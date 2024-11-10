@@ -1,0 +1,82 @@
+.custom-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    #1db954 var(--progress),
+    rgba(255, 255, 255, 0.1) var(--progress)
+  );
+  border-radius: 2px;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.volume-range {
+  background: linear-gradient(
+    to right,
+    #1db954 var(--volume),
+    rgba(255, 255, 255, 0.1) var(--volume)
+  );
+}
+
+/* Estilo del thumb (punto de control) */
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  transform-origin: left;
+}
+
+.custom-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilo de la barra de progreso */
+.progress-container {
+  margin: 0 10px;
+  position: relative;
+}
+
+/* Estilo del contenedor de volumen */
+.volume-container {
+  width: 100px;
+}
+
+/* Estilo para el display del tiempo */
+.time-display {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  min-width: 45px;
+}
+
+/* Hover effects */
+.custom-range:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+
+.custom-range:hover::-moz-range-thumb {
+  transform: scale(1.2);
+}
+
+/* Estilo activo */
+.custom-range:active::-webkit-slider-thumb {
+  transform: scale(0.95);
+}
+
+.custom-range:active::-moz-range-thumb {
+  transform: scale(0.95);
+}

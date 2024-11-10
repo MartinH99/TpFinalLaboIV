@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -50,7 +50,7 @@ import { CardComponent } from './components/card/card.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule 
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

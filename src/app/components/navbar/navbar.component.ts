@@ -13,6 +13,7 @@ export class NavbarComponent {
   public isProfileMenuOpen = false;
   public showNotif = false;
   public hasNotifications = true; // Comienza en true para que el círculo se muestre inicialmente
+  public isLoading: boolean = false;
 
   public searchMood: string = '';
 
@@ -48,12 +49,14 @@ export class NavbarComponent {
     if (this.showNotif) {
       this.hasNotifications = false;
     }
-    if(this.isProfileMenuOpen){
-      this.isProfileMenuOpen=false;
-    }
-     this.showNotif = !this.showNotif;
-    
-     
+    // Abre el menú de notificaciones y desactiva el indicador de notificación
+    this.showNotif = true;
+    this.hasNotifications = false;
+
+    // Ocultar automáticamente el toast después de unos segundos
+    setTimeout(() => {
+      this.showNotif = false;
+    }, 6000); // Duración en milisegundos
   }
 
 
@@ -75,14 +78,18 @@ export class NavbarComponent {
   }
 
   loadSongs(currentMood: string) {
+    this.isLoading = true;
     this.moodMusicService.getSongsByMood(currentMood).subscribe(
       (data) => {
-        console.log('Canciones encontradas:', data);
-        this.searchStateService.updateSearchResults(data);
+        // console.log('Canciones encontradas:', data);
+        const filteredSongs = data.slice(0, 5);
+        this.searchStateService.updateSearchResults(filteredSongs);
+        this.isLoading = false;
       },
       (error) => {
         console.error('Error fetching songs:', error);
         this.searchStateService.resetSearch();
+        this.isLoading = false;
       }
     );
   }
