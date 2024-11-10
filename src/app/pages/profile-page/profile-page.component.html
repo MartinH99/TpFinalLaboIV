@@ -1,1 +1,30 @@
-<p>profile-page works!</p>
+<div class="profile-container">
+    <div class="profile-header">
+      <h2>Perfil de Usuario</h2>
+    </div>
+    <div class="profile-info">
+      <label>Nombre:</label>
+      <span *ngIf="!isEditing">{{ user?.name }}</span>
+      <input *ngIf="isEditing" [(ngModel)]="user.name" type="text" />
+      
+      <label>Email:</label>
+      <span *ngIf="!isEditing">{{ user?.email }}</span>
+      <input *ngIf="isEditing" [(ngModel)]="user.email" type="email" />
+  
+      <label>Nombre de Usuario:</label>
+      <span *ngIf="!isEditing">{{ user?.username }}</span>
+      <input *ngIf="isEditing" [(ngModel)]="user.username" type="text" />
+  
+      <label>Contraseña:</label>
+      <span *ngIf="!isEditing">********</span>
+      <input *ngIf="isEditing" [(ngModel)]="user.password" type="password" />
+    </div>
+  
+    <div class="profile-actions">
+      <button class="edit-button" (click)="toggleEditMode()">
+        <i class="fa fa-pencil"></i> {{ isEditing ? 'Guardar' : 'Editar' }}
+      </button>
+      <button class="delete-button" (click)="confirmDelete()">Eliminar Cuenta</button>
+    </div>
+  </div>
+  
