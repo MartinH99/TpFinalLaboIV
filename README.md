@@ -17,7 +17,7 @@ Este proyecto es una versión de Spotify en la cual todas las canciones que el u
 - **Register**: El usuario deberá registrarse con sus datos personales para posteriormente logearse e ingresar a la página principal. 
 - **Login**: El usuario deberá logearse con la información correspondiente de su registro para poder ingresar, de lo contrario, no podrá tener acceso a la página principal. 
 - **Forgot Password**: Sí por algún motivo el usuario no recuerda su contraseña, el sistema proovera de una sección para recuperarla. Deberá recordar su "PIN" o "Respuesta de seguridad" que serán digitos que el usuario ingresó en su registro. 
-- **Home**: Una vez que el usuario haya podido logearse satisfactoriamente, podrá tener acceso a la página principal donde encontraremos variedad de canciones, artistas e incluso una sección de "playlist" dónde el usuario podrá guardar sus canciones preferidas. Además el usuario podrá buscar canciones dependiendo su estado de ánimo actual. El sistema analizará el estado de ánimo del usuario y brindará canciones relevantes.
+- **Home**: Una vez que el usuario haya podido logearse satisfactoriamente, podrá tener acceso a la página principal donde encontraremos variedad de canciones, artistas e incluso una sección de "playlist" dónde el usuario podrá guardar sus canciones preferidas. Además el usuario podrá buscar canciones dependiendo su estado de ánimo actual. El sistema analizará el estado de ánimo del usuario y brindará canciones relevantes. El usuario tendrá la posibilidad de reproducir en la web una preview de la canción completa o sí quiere escuchar la canción completa tendrá la posibilidad de hacerlo mediante un botón que lo redirigirá a Spotify. 
 - **Profile**: El usuario podrá editar su información personal o eliminar su cuenta de ser necesario. En caso de la segunda opción, deberá registrarse nuevamente para ingresar ya que automaticamente sus credenciales serán borradas del sistema. 
 
 ## Comandos
@@ -52,11 +52,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. **NodeJS**
    Instalar Node.js → https://nodejs.org/ (todo “Siguiente” hasta finalizar)
 3. **Json Server**
-   a. Abrir Terminal (macOS) o PowerShell/CMD (Windows)
-   b. Ejecutar el comando: npm install --global json-server@0.17.4
-   c. Si falla, ejecutar el comando: Set-ExecutionPolicy RemoteSigned
-   d. Para levantarlo, ir a la carpeta del proyecto o donde tengamos el archivo .json
-   e. Ejecutar: json-server --watch NombreDelArchivo.json
+   - Abrir Terminal (macOS) o PowerShell/CMD (Windows)
+   - Ejecutar el comando: npm install --global json-server@0.17.4
+   - Si falla, ejecutar el comando: Set-ExecutionPolicy RemoteSigned
+   - Para levantarlo, ir a la carpeta del proyecto o donde tengamos el archivo .json
+   - Ejecutar: json-server --watch NombreDelArchivo.json ó npm run backend
 4. **Angular CLI**
    npm install -g @angular/cli
    
