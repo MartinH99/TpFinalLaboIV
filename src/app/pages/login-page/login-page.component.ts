@@ -11,6 +11,8 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   loginForm: FormGroup;
 
+  errorMessage: string | null = null;
+
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -29,22 +31,38 @@ export class LoginComponent {
   }
 
   onLogin() {
+    this.errorMessage = null;
+
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
 
       this.authService.login(email, password).subscribe(
         user => {
-          if(user){
-            localStorage.setItem('userId', user.id)
+          if (user) {
+            localStorage.setItem('userId', user.id);
             this.login();
           } else {
-            alert('¡Usuario y/o contraseña incorrectos!')
+            this.showError('¡Usuario y/o contraseña incorrectos!');
           }
+        },
+        () => {
+          this.showError('¡Hubo un error en el servidor! Por favor, inténtalo de nuevo más tarde.');
         }
-      )
+      );
     } else {
-      alert('Por favor, completa todos los campos requeridos correctamente.');
+      this.showError('¡Completa todos los campos requeridos!');
     }
+  }
+
+  showError(message: string) {
+    this.errorMessage = message;
+    setTimeout(() => {
+      this.errorMessage = null;
+    }, 3000);
+  }
+
+  clearError() {
+    this.errorMessage = null;
   }
 
   register() {

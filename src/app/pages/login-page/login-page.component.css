@@ -5,14 +5,13 @@
   background-color: #000000;
 }
 
-
 .login-container {
   max-width: 600px;
   height: fit-content;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-image: url('/src/assets/Spotify.jfif');
+  background-image: url("/src/assets/Spotify.jfif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -70,11 +69,27 @@
   gap: 10px;
 }
 .options a {
-  color: #1DB954;
+  color: #1db954;
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .options a:hover {
   text-decoration: underline;
+}
+
+.alert {
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

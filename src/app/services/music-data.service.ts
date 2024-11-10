@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map, switchMap } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { environmentProd } from '../../environments/environment.prod'
+// import { environmentProd } from '../../environments/environment.prod'
 
 @Injectable({
   providedIn: 'root'
 })
 export class MusicDataService {
   private apiUrl = environment.apiUrl;
-  
-  private apiUrlProd = environmentProd.apiUrl;
-  private token = environmentProd.token;
+
+  // private apiUrlProd = environmentProd.apiUrl;
+  // private token = environmentProd.token;
 
   constructor(private http: HttpClient) { }
 
@@ -42,7 +42,7 @@ export class MusicDataService {
       map(user => user.playlist)
     );
   }
-  
+
   addToPlaylist(userId: string, song: any): Observable<any> {
     return this.getPlaylist(userId).pipe(
       switchMap(playlist => {
@@ -51,7 +51,7 @@ export class MusicDataService {
       })
     );
   }
-  
+
   removeFromPlaylist(userId: string, songId: number): Observable<any> {
     return this.getPlaylist(userId).pipe(
       switchMap(playlist => {
