@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input  } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchStateService } from '../../services/search-state.service';
 import { MusicDataService } from '../../services/music-data.service';
@@ -10,6 +10,10 @@ import { Notification } from './../../interfaces/user.model';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  @Input() showSearch: boolean = true;
+  @Input() showNotificationIcon: boolean = true;
+  @Input() isHome: boolean = true;
+
   public isProfileMenuOpen = false;
   public showNotif = false;
   public hasNotifications = true; // Comienza en true para que el círculo se muestre inicialmente

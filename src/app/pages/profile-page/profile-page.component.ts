@@ -49,6 +49,9 @@ export class ProfilePageComponent implements OnInit {
 
   confirmDelete(): void {
     const email = prompt('Confirma tu email para eliminar la cuenta:');
+
+    if (!email) return;
+    
     if (email === this.user?.email) {
       this.http.delete(`http://localhost:3000/users/${this.user.id}`).subscribe(
         () => console.log('User deleted successfully'),

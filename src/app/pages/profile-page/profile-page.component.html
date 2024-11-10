@@ -1,18 +1,19 @@
 <div class="profile-container">
+    <app-navbar [showSearch]="false" [showNotificationIcon]="false" [isHome]="false" />
     <div class="profile-header">
       <h2>Perfil de Usuario</h2>
     </div>
     <div class="profile-info">
       <label>Nombre:</label>
-      <span *ngIf="!isEditing">{{ user?.name }}</span>
+      <span *ngIf="!isEditing">{{ user.name }}</span>
       <input *ngIf="isEditing" [(ngModel)]="user.name" type="text" />
       
       <label>Email:</label>
-      <span *ngIf="!isEditing">{{ user?.email }}</span>
+      <span *ngIf="!isEditing">{{ user.email }}</span>
       <input *ngIf="isEditing" [(ngModel)]="user.email" type="email" />
   
       <label>Nombre de Usuario:</label>
-      <span *ngIf="!isEditing">{{ user?.username }}</span>
+      <span *ngIf="!isEditing">{{ user.username }}</span>
       <input *ngIf="isEditing" [(ngModel)]="user.username" type="text" />
   
       <label>Contraseña:</label>
@@ -27,4 +28,25 @@
       <button class="delete-button" (click)="confirmDelete()">Eliminar Cuenta</button>
     </div>
   </div>
+
+  <!-- Modal de Bootstrap -->
+  <div class="modal fade" id="emailErrorModal" tabindex="-1" aria-labelledby="emailErrorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="emailErrorModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Email incorrecto. Por favor, intenta nuevamente.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
   

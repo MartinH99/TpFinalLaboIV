@@ -91,10 +91,10 @@ export class RegisterPageComponent implements OnInit {
           const maxId = users.reduce((max, user) => {
             const userId = Number(user.id);
             return userId > max ? userId : max;
-          }, 0);
+          }, 0)
 
           const user: User = {
-            id: maxId + 1,
+            id: (maxId + 1).toString(),
             securityAnswer: this.formulario.get('securityAnswer')?.value,
             name: this.formulario.get('name')?.value,
             username: this.formulario.get('username')?.value,

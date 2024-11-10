@@ -8,7 +8,7 @@
     </a>
 
     <!-- Búsqueda -->
-    <div class="search-container mx-auto">
+    <div *ngIf="showSearch" class="search-container mx-auto">
       <div class="input-group">
         <!-- Campo de búsqueda -->
         <input
@@ -82,7 +82,7 @@
     <!-- Botón de notificaciones y de perfil -->
     <div class="d-flex align-items-center">
       <div class="position-relative">
-        <button class="btn btn-link text-light" (click)="showNotification()">
+        <button class="btn btn-link text-light" (click)="showNotification()" *ngIf="showNotificationIcon">
           <i class="bi bi-bell icon-notification"></i>
           <!-- Círculo amarillo para indicar notificaciones -->
           <span *ngIf="hasNotifications && notifications.length > 0"  class="notification-indicator"></span>
@@ -118,13 +118,10 @@
 
       <!-- Menú de perfil -->
       <div class="profile-menu" *ngIf="isProfileMenuOpen">
-        <a class="profile-menu-item" style="cursor: pointer" (click)="profile()"
-          >Perfil</a
-        >
+        <a *ngIf="isHome" class="profile-menu-item" style="cursor: pointer" (click)="profile()">Perfil</a>
+        <a *ngIf="!isHome" class="profile-menu-item" style="cursor: pointer" (click)="home()">Home</a>
         <hr />
-        <a class="profile-menu-item" style="cursor: pointer" (click)="logout()"
-          >Cerrar sesión</a
-        >
+        <a class="profile-menu-item" style="cursor: pointer" (click)="logout()">Cerrar sesión</a>
       </div>
     </div>
   </div>
