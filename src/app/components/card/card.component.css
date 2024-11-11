@@ -1,0 +1,94 @@
+/* Estilos para las imágenes de las cards */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* /. Estilos para las imágenes de las cards */
+
+/* Estilos para el botón de 'PLAY' de las cards */
+
+.play-button {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #1db954;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.play-icon {
+  width: 24px;
+  height: 24px;
+  fill: black;
+}
+
+.card:hover .image-container img {
+  transform: scale(1.1);
+}
+
+.card:hover .play-button {
+  opacity: 1;
+  transform: translateY(-8px);
+}
+
+.play-button:hover {
+  transform: scale(1.1) translateY(-8px);
+  background-color: #1ed760;
+}
+
+.play-link {
+  color: lightgray;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.play-link:hover {
+  color: #1db954;
+}
+
+@keyframes buttonPop {
+  0% {
+    transform: scale(1) translateY(-8px);
+  }
+  50% {
+    transform: scale(0.95) translateY(-7px);
+  }
+  100% {
+    transform: scale(1) translateY(-8px);
+  }
+}
+
+.play-button:active {
+  animation: buttonPop 0.2s ease-in-out;
+}
+
+/* /. Estilos para el botón de 'PLAY' de las cards */
+
+.text-danger {
+  color: red;
+}

@@ -1,41 +1,127 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
-
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
     <!-- Logo Spotify -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" (click)="home()" style="cursor: pointer">
       <i class="bi bi-spotify icon-spotify"></i>
     </a>
 
     <!-- Búsqueda -->
-    <div class="search-container mx-auto">
+    <div *ngIf="showSearch" class="search-container mx-auto">
       <div class="input-group">
         <!-- Campo de búsqueda -->
-        <input type="text" class="custom-search-input" placeholder="¿Qué quieres reproducir?" aria-label="Search">
+        <input
+          type="text"
+          class="custom-search-input"
+          placeholder="¿Cuál es tu estado de animo?"
+          aria-label="Search"
+          [(ngModel)]="searchMood"
+        />
+
         <!-- Icono a la derecha del search -->
-        <span class="input-group-text search-icon-right">
+        <span class="input-group-text search-icon-right" (click)="onSearch()">
           <i class="bi bi-search"></i>
+        </span>
+
+        <!-- Loader -->
+        <span *ngIf="isLoading" class="loader" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+          >
+            <g>
+              <circle cx="12" cy="3" r="1" fill="currentColor">
+                <animate
+                  id="svgSpinners12DotsScaleRotate0"
+                  attributeName="r"
+                  begin="0;svgSpinners12DotsScaleRotate2.end-0.5s"
+                  calcMode="spline"
+                  dur="0.6s"
+                  keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                  values="1;2;1"
+                />
+              </circle>
+              <circle cx="16.5" cy="4.21" r="1" fill="currentColor">
+                <animate
+                  id="svgSpinners12DotsScaleRotate1"
+                  attributeName="r"
+                  begin="svgSpinners12DotsScaleRotate0.begin+0.1s"
+                  calcMode="spline"
+                  dur="0.6s"
+                  keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                  values="1;2;1"
+                />
+              </circle>
+              <circle cx="7.5" cy="4.21" r="1" fill="currentColor">
+                <animate
+                  id="svgSpinners12DotsScaleRotate2"
+                  attributeName="r"
+                  begin="svgSpinners12DotsScaleRotate4.begin+0.1s"
+                  calcMode="spline"
+                  dur="0.6s"
+                  keySplines=".27,.42,.37,.99;.53,0,.61,.73"
+                  values="1;2;1"
+                />
+              </circle>
+              <animateTransform
+                attributeName="transform"
+                dur="6s"
+                repeatCount="indefinite"
+                type="rotate"
+                values="360 12 12;0 12 12"
+              />
+            </g>
+          </svg>
         </span>
       </div>
     </div>
 
     <!-- Botón de notificaciones y de perfil -->
     <div class="d-flex align-items-center">
-      <button class="btn btn-link text-light">
-        <i class="bi bi-bell icon-notification"></i>
-      </button>
-
-      <!-- Botón de perfil con menú desplegable -->
       <div class="position-relative">
-        <button class="btn btn-link text-light" (click)="toggleProfileMenu()">
-          <i class="bi bi-person-circle icon-profile"></i>
+        <button class="btn btn-link text-light" (click)="showNotification()" *ngIf="showNotificationIcon">
+          <i class="bi bi-bell icon-notification"></i>
+          <!-- Círculo amarillo para indicar notificaciones -->
+          <span *ngIf="hasNotifications && notifications.length > 0"  class="notification-indicator"></span>
         </button>
 
-        <!-- Menú de perfil -->
-        <div class="profile-menu" *ngIf="isProfileMenuOpen">
-          <a class="profile-menu-item" style="cursor: pointer;" (click)="profile()">Perfil</a>
-          <hr>
-          <a class="profile-menu-item" style="cursor: pointer;" (click)="logout()">Cerrar sesión</a>
+        <div class="profile-menu" *ngIf="showNotif && notifications.length > 0">
+          <div
+            *ngFor="let notification of notifications"
+            class="profile-menu-item position-relative p-3 border-bottom"
+          >
+            <!-- Botón de cierre para cada notificación -->
+            <button
+              type="button"
+              class="btn-close position-absolute top-0 end-0 m-2"
+              (click)="hideNotification(notification.id)"
+              aria-label="Close"
+            ></button>
+
+            <!-- Contenido de la notificación -->
+            <strong>{{ notification.title }}</strong
+            ><br />
+            <span>{{ notification.message }}</span>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Botón de perfil con menú desplegable -->
+    <div class="position-relative">
+      <button class="btn btn-link text-light" (click)="toggleProfileMenu()">
+        <i class="bi bi-person-circle icon-profile"></i>
+      </button>
+
+      <!-- Menú de perfil -->
+      <div class="profile-menu" *ngIf="isProfileMenuOpen">
+        <a *ngIf="isHome" class="profile-menu-item" style="cursor: pointer" (click)="profile()">Perfil</a>
+        <a *ngIf="!isHome" class="profile-menu-item" style="cursor: pointer" (click)="home()">Home</a>
+        <hr />
+        <a class="profile-menu-item" style="cursor: pointer" (click)="logout()">Cerrar sesión</a>
       </div>
     </div>
   </div>

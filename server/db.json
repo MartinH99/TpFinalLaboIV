@@ -1,89 +1,301 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "franco_gutierrez",
+      "id": "1",
+      "username": "francoguti",
       "securityAnswer": "1234",
-      "email": "",
-      "password": "",
+      "email": "francogutierrez01@hotmail.com",
+      "password": "pocho12345",
       "name": "Franco Gutierrez",
-      "avatar": "foto-perfil.png",
-      "isBlocked": false
+      "isBlocked": false,
+      "playlist": []
     },
     {
-      "id": 2,
-      "username": "martin_hernandez",
-      "securityAnswer": "1234",
-      "email": "martinhernandezmdp@gmail.com",
-      "password": "MARTINCHO",
-      "name": "Martin Hernandez",
-      "avatar": "foto-perfil.png",
-      "isBlocked": true
-    },
-    {
-      "id": 3,
+      "id": "3",
       "username": "mariano_labatut",
       "securityAnswer": "1234",
       "email": "marianolabatut@gmail.com",
-      "password": "",
+      "password": "marianolabatut",
       "name": "Mariano Labatut",
-      "avatar": "foto-perfil.png",
-      "isBlocked": false
+      "isBlocked": false,
+      "playlist": []
+    },
+    {
+      "id": 4,
+      "securityAnswer": "TINO",
+      "name": "Martin",
+      "username": "tincho99",
+      "email": "martinhernandezmdp@gmail.com",
+      "password": "MARTINCHO",
+      "isBlocked": false,
+      "playlist": []
     }
   ],
-  "user_settings": [
+  "felicidad": [
     {
-      "id": 1,
-      "userId": 1,
-      "theme": "dark",
-      "language": "es",
-      "notifications_enabled": true,
-      "private_session": false
+      "name": "Happy - From \"Despicable Me 2\"",
+      "url": "https://open.spotify.com/track/60nZcImufyMA1MKQY3dcCH",
+      "image": "https://i.scdn.co/image/ab67616d0000b273e8107e6d9214baa81bb79bba",
+      "popularity": 79,
+      "preview_url": "https://p.scdn.co/mp3-preview/5e0c8e5d899dea532d697fb20a851450e9614cfc?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "5d66"
     },
     {
-      "id": 2,
-      "userId": 2,
-      "theme": "light",
-      "language": "es",
-      "notifications_enabled": false,
-      "private_session": true
+      "name": "Don't Worry Be Happy",
+      "url": "https://open.spotify.com/track/4hObp5bmIJ3PP3cKA9K9GY",
+      "image": "https://i.scdn.co/image/ab67616d0000b273a88b9eddbf3650ea0529f2cc",
+      "popularity": 66,
+      "preview_url": null,
+      "artist": "Prueba",
+      "id": "7d53"
     },
     {
-      "id": 3,
-      "userId": 3,
-      "theme": "light",
-      "language": "es",
-      "notifications_enabled": false,
-      "private_session": false
+      "name": "Walking On Sunshine",
+      "url": "https://open.spotify.com/track/05wIrZSwuaVWhcv5FfqeH0",
+      "image": "https://i.scdn.co/image/ab67616d0000b273eafaf556eda644a745d0144d",
+      "popularity": 76,
+      "preview_url": null,
+      "artist": "Prueba",
+      "id": "44c6"
+    },
+    {
+      "name": "Good Vibrations - Remastered 2001",
+      "url": "https://open.spotify.com/track/5t9KYe0Fhd5cW6UYT4qP8f",
+      "image": "https://i.scdn.co/image/ab67616d0000b273fb9dac3244b8486758058a81",
+      "popularity": 69,
+      "preview_url": null,
+      "artist": "Prueba",
+      "id": "2aa3"
+    },
+    {
+      "name": "I'm a Believer - 2006 Remaster",
+      "url": "https://open.spotify.com/track/3G7tRC24Uh09Hmp1KZ7LQ2",
+      "image": "https://i.scdn.co/image/ab67616d0000b273360a1ae790aa71a0aac4983e",
+      "popularity": 73,
+      "preview_url": "https://p.scdn.co/mp3-preview/4a9306672cfd444df93eb6452005f33194b2cff5?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "a12c"
     }
   ],
-  "user_playlists": [
+  "tristeza": [
     {
-      "id": 1,
-      "userId": 1,
-      "name": "Mis Favoritas",
-      "description": "Una colección de mis canciones favoritas",
-      "isPublic": true,
-      "createdAt": "2023-03-10T09:00:00Z",
-      "updatedAt": "2023-06-15T16:30:00Z"
+      "name": "Someone Like You",
+      "url": "https://open.spotify.com/track/1zwMYTA5nlNjZxYrvBB2pV",
+      "image": "https://i.scdn.co/image/ab67616d0000b2732118bf9b198b05a95ded6300",
+      "popularity": 77,
+      "preview_url": "https://p.scdn.co/mp3-preview/a79d612cac9b64e900ae937234e2838a88ebc415?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "31c8"
     },
     {
-      "id": 2,
-      "userId": 2,
-      "name": "Para Trabajar",
-      "description": "Música para concentrarse en el trabajo",
-      "isPublic": false,
-      "createdAt": "2023-04-05T11:20:00Z",
-      "updatedAt": "2023-06-20T10:15:00Z"
+      "name": "Tears in Heaven",
+      "url": "https://open.spotify.com/track/1kgdslQYmeTR4thk9whoRw",
+      "image": "https://i.scdn.co/image/ab67616d0000b27344cb13558d57f5a066fac381",
+      "popularity": 69,
+      "preview_url": "https://p.scdn.co/mp3-preview/75b509c1396246c1c3a3c048c4abd35904f95c05?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "6d18"
     },
     {
-      "id": 3,
-      "userId": 3,
-      "name": "Canciones variadas",
-      "description": "Variedad de músicas para hacer mas llevadero el dia",
-      "isPublic": false,
-      "createdAt": "2023-04-05T11:20:00Z",
-      "updatedAt": "2023-06-20T10:15:00Z"
+      "name": "Hallelujah",
+      "url": "https://open.spotify.com/track/3pRaLNL3b8x5uBOcsgvdqM",
+      "image": "https://i.scdn.co/image/ab67616d0000b2736a760642a56847027428cb61",
+      "popularity": 67,
+      "preview_url": "https://p.scdn.co/mp3-preview/b2267deb319eac11b93d8544ae7c714c16ca1959?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "3ce6"
+    },
+    {
+      "name": "The Sound of Silence - Acoustic Version",
+      "url": "https://open.spotify.com/track/5y788ya4NvwhBznoDIcXwK",
+      "image": "https://i.scdn.co/image/ab67616d0000b2733b50c381e5f477c3cd066286",
+      "popularity": 77,
+      "preview_url": "https://p.scdn.co/mp3-preview/ce31ae784cc3a4a3958a6ae24e5a9d6d664b8508?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "8ecb"
+    },
+    {
+      "name": "Nothing Compares 2 U",
+      "url": "https://open.spotify.com/track/5GHY1DFWKz3Prg2V0Iodqo",
+      "image": "https://i.scdn.co/image/ab67616d0000b2734eeefa0555b6f8cc88df9ffe",
+      "popularity": 74,
+      "preview_url": "https://p.scdn.co/mp3-preview/dd12ed39f779a9cb61c7009f322192a2e6ee37ba?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "8ee3"
+    }
+  ],
+  "enojo": [
+    {
+      "name": "Killing In The Name",
+      "url": "https://open.spotify.com/track/59WN2psjkt1tyaxjspN8fp",
+      "image": "https://i.scdn.co/image/ab67616d0000b27354ab617bc2d4974ab6ffbece",
+      "popularity": 78,
+      "preview_url": "https://p.scdn.co/mp3-preview/998d3604b68754c11bc0a9af64291ac1f91fb0d8?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "54e1"
+    },
+    {
+      "name": "Bulls On Parade",
+      "url": "https://open.spotify.com/track/0tZ3mElWcr74OOhKEiNz1x",
+      "image": "https://i.scdn.co/image/ab67616d0000b273053f006079bce979e5fef1e1",
+      "popularity": 71,
+      "preview_url": "https://p.scdn.co/mp3-preview/c1626784be02379a8ec2fa5f7d7f735c1eda772b?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "eb72"
+    },
+    {
+      "name": "Fight The Power",
+      "url": "https://open.spotify.com/track/1yo16b3u0lptm6Cs7lx4AD",
+      "image": "https://i.scdn.co/image/ab67616d0000b2732e3d1de8b2f61a477ae1ed6c",
+      "popularity": 52,
+      "preview_url": null,
+      "artist": "Prueba",
+      "id": "7e9b"
+    },
+    {
+      "name": "Lose Yourself",
+      "url": "https://open.spotify.com/track/5Z01UMMf7V1o0MzF86s6WJ",
+      "image": "https://i.scdn.co/image/ab67616d0000b273eab40fc794b88b9d1e012578",
+      "popularity": 77,
+      "preview_url": null,
+      "artist": "Prueba",
+      "id": "16c4"
+    },
+    {
+      "name": "My Name Is",
+      "url": "https://open.spotify.com/track/75IN3CtuZwTHTnZvYM4qnJ",
+      "image": "https://i.scdn.co/image/ab67616d0000b2739bef45ee387f274ea3198c55",
+      "popularity": 74,
+      "preview_url": null,
+      "artist": "Prueba",
+      "id": "1f4a"
+    }
+  ],
+  "relajado": [
+    {
+      "name": "STAY (with Justin Bieber)",
+      "url": "https://open.spotify.com/track/567e29TDzLwZwfDuEpGTwo",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b4d59e6fa7e5e7cbc57ac33a",
+      "popularity": 83,
+      "preview_url": "https://p.scdn.co/mp3-preview/718a2eb032524494a01f73d80af2bcf176c9f3e2?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "ebc6"
+    },
+    {
+      "name": "As It Was",
+      "url": "https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e",
+      "image": "https://i.scdn.co/image/ab67616d0000b2732e8ed79e177ff6011076f5f0",
+      "popularity": 87,
+      "preview_url": "https://p.scdn.co/mp3-preview/c43dd07043b29e800c1a65b3a0102861fa3cf418?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "3e02"
+    },
+    {
+      "name": "First Class",
+      "url": "https://open.spotify.com/track/0wHFktze2PHC5jDt3B17DC",
+      "image": "https://i.scdn.co/image/ab67616d0000b2738e55edb69ca44a25b52b17bb",
+      "popularity": 73,
+      "preview_url": "https://p.scdn.co/mp3-preview/c05a687254dbdf50a9ab4879d85e54a7594e367f?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "3a17"
+    },
+    {
+      "name": "WAIT FOR U (feat. Drake & Tems)",
+      "url": "https://open.spotify.com/track/59nOXPmaKlBfGMDeOVGrIK",
+      "image": "https://i.scdn.co/image/ab67616d0000b27386badd635b69aea887862214",
+      "popularity": 82,
+      "preview_url": "https://p.scdn.co/mp3-preview/38e12dbcba624463f1a360afd5dcceaf281b1ea5?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "ba43"
+    },
+    {
+      "name": "About Damn Time",
+      "url": "https://open.spotify.com/track/6HMtHNpW6YPi1hrw9tgF8P",
+      "image": "https://i.scdn.co/image/ab67616d0000b273fe3b1b9cb7183a94e1aafd43",
+      "popularity": 70,
+      "preview_url": "https://p.scdn.co/mp3-preview/eccfdcaa8806d35934078840b549adc92f01fbff?cid=c3cbeade6d8b4d0b9367487de8e2e0ba",
+      "artist": "Prueba",
+      "id": "465b"
+    }
+  ],
+  "worldTop": [
+    {
+      "title": "Paint The Town Red",
+      "artist": "Doja Cat",
+      "imageUrl": "https://i.ytimg.com/vi/m4_9TFeMfJE/maxresdefault.jpg",
+      "url": "https://open.spotify.com/intl-es/track/7DlZH8EiVDgQXNoj3dnyZC",
+      "preview_url": "https://p.scdn.co/mp3-preview/1d4dc1cd67ba78afec8cfb3e5258a9ab9b707dd8?cid=cfe923b2d660439caf2b557b21f31221",
+      "id": "476f"
+    },
+    {
+      "title": "Real Gangsta Love",
+      "artist": "Trueno",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRisFKOBqcef6l4t7eoLRx1Fy7DrGnsRZZucw&s",
+      "url": "https://open.spotify.com/intl-es/track/1pymWRCuZfCd0zdiBJo0Hj",
+      "preview_url": "https://p.scdn.co/mp3-preview/2f10aa6bf08d7c4b1a7737c3accb9b738f885c73?cid=cfe923b2d660439caf2b557b21f31221",
+      "id": "dcfa"
+    },
+    {
+      "title": "I Remember Everything (feat. Kacey Musgraves)",
+      "artist": "Zach Bryan",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeXe3syMZSBXYUE70sR2WnyyRaSqMMbeL9Aw&s",
+      "url": "https://open.spotify.com/intl-es/track/4KULAymBBJcPRpk1yO4dOG",
+      "preview_url": "https://p.scdn.co/mp3-preview/22b240f7ef2eff38bd12fb0c94dfea5e1d70e20a?cid=cfe923b2d660439caf2b557b21f31221",
+      "id": "97dd"
+    },
+    {
+      "title": "FE!N (feat. Playboi Carti)",
+      "artist": "Travis Scott, PlayBoi Carti",
+      "imageUrl": "https://m.media-amazon.com/images/I/31XnTeYznHL._UXNaN_FMjpg_QL85_.jpg",
+      "url": "https://open.spotify.com/intl-es/track/42VsgItocQwOQC3XWZ8JNA",
+      "preview_url": "https://p.scdn.co/mp3-preview/4b0178cf6991f59db18e12e2219ff11e27474b0a?cid=cfe923b2d660439caf2b557b21f31221",
+      "id": "a86a"
+    },
+    {
+      "title": "Quevedo: Bzrp Music Sessions, Vol.52",
+      "artist": "Bizarrap, Quevedo",
+      "imageUrl": "https://i.scdn.co/image/ab67616d0000b2731630dd349221a35ce03a0ccf",
+      "url": "https://open.spotify.com/intl-es/track/2tTmW7RDtMQtBk7m2rYeSw",
+      "preview_url": "https://p.scdn.co/mp3-preview/e9c0ed735e611f6af45bc946bd4c31590df09ed6?cid=cfe923b2d660439caf2b557b21f31221",
+      "id": "5867"
+    }
+  ],
+  "popularArtists": [
+    {
+      "title": "Milo J",
+      "artist": "Joven Artista y rapero argentino. Combina elementos de trap, rap y música urbana con letras introspectivas y a menudo emocionales. ",
+      "imageUrl": "https://yt3.googleusercontent.com/DsqLhK_MXcm5cN3tX14NDKZ4dJuLG1CeASkovaRMOs4KqWwGTXgWg_caDrnnUJMb4p7wunsB=s900-c-k-c0x00ffffff-no-rj",
+      "profileUrl": "https://open.spotify.com/intl-es/artist/19HM5j0ULGSmEoRcrSe5x3",
+      "id": "4343"
+    },
+    {
+      "title": "Travis Scott",
+      "artist": "Rapero, productor y diseñador estadounidense conocido por su estilo innovador que fusiona hip-hop, trap y psicodelia. ",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIf4LPJWrvzwnVs_EHovlv1sycguMODvEbsw&s",
+      "profileUrl": "https://open.spotify.com/intl-es/artist/0Y5tJX1MQlPlqiwlOH1tJY",
+      "id": "6421"
+    },
+    {
+      "title": "Bizarrap",
+      "artist": "Destacado productor y DJ argentino conocido mundialmente por sus Bzrp Music Sessions.",
+      "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb14add0d3419426b84158b913",
+      "profileUrl": "https://open.spotify.com/intl-es/artist/716NhGYqD1jl2wI1Qkgq36",
+      "id": "82c9"
+    },
+    {
+      "title": "Duki",
+      "artist": "Artista más influyente del trap y la música urbana en Argentina y América Latina. ",
+      "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb731bcc0d0f1323fbf91c5719",
+      "profileUrl": "https://open.spotify.com/intl-es/artist/1bAftSH8umNcGZ0uyV7LMg",
+      "id": "fe74"
+    },
+    {
+      "title": "Cancerbero",
+      "artist": "Influyente rapero y compositor venezolano, considerado una de las figuras más destacadas del rap en español. ",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbBoNXe8NAoUAgShy8UELxwWnQR0k1jIUQVw&s",
+      "profileUrl": "https://open.spotify.com/intl-es/artist/1wGIhYkKWSq4yACtTkCkSX",
+      "id": "60c8"
     }
   ]
 }
