@@ -29,7 +29,7 @@ export class RegisterPageComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required, Validators.maxLength(15)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
-      securityAnswer: ['', [Validators.required, Validators.minLength(3)]]
+      securityAnswer: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(4)]]
 
     });
   }
@@ -38,7 +38,6 @@ export class RegisterPageComponent implements OnInit {
 
   onClickSiguiente() {
     if (this.formulario.get('name')?.valid && this.formulario.get('email')?.valid) {
-      // Verificar si el email ya existe en la base de datos
       this.registerService.getUsers().subscribe({
         next: (users: User[]) => {
           const existingEmail = users.some(
@@ -58,7 +57,6 @@ export class RegisterPageComponent implements OnInit {
         },
       });
     } else {
-      // Marcar los campos como tocados si no son válidos
       this.formulario.get('name')?.markAsTouched();
       this.formulario.get('email')?.markAsTouched();
     }
@@ -72,7 +70,6 @@ export class RegisterPageComponent implements OnInit {
         next: (users: User[]) => {
 
 
-          // Verificar si ya existe el username
           const existingUsername = users.some(
             (user) => user.username === this.formulario.get('username')?.value
           );
@@ -105,7 +102,7 @@ export class RegisterPageComponent implements OnInit {
 
           };
 
-          // Agregar el nuevo usuario
+
           this.registerService.addUser(user).pipe(take(1)).subscribe({
             next: (response) => {
               //console.log('User registered:', response);
