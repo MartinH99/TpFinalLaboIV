@@ -82,10 +82,16 @@ export class NavbarComponent {
   loadSongs(currentMood: string) {
     this.isLoading = true;
     this.moodMusicService.getSongsByMood(currentMood).subscribe(
-      (data) => {
-        // console.log('Canciones encontradas:', data);
-        const filteredSongs = data.slice(0, 5);
-        this.searchStateService.updateSearchResults(filteredSongs);
+      (data: (any | null)[]) => {  
+        //console.log('Canciones encontradas:', data);
+  
+        // Filtrar los elementos null
+        const filteredSongs = data.filter(song => song !== null);
+  
+        // Si hay más de 5 canciones, toma solo las primeras 5
+        const finalSongs = filteredSongs.slice(0, 5);
+  
+        this.searchStateService.updateSearchResults(finalSongs);
         this.isLoading = false;
       },
       (error) => {
@@ -95,5 +101,4 @@ export class NavbarComponent {
       }
     );
   }
-
 }
